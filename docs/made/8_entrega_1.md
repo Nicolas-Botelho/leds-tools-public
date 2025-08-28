@@ -1,3 +1,8 @@
+---
+sidebar_position: 8
+title: Proposed Architecture
+---
+
 # 1. Proposed Architecture
 
 To support Agile Management modules with MADE (EPICs, user stories, backlog, sprints, releases, and dashboards) in a scalable and testable web application, I adopt **Clean Architecture**:

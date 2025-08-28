@@ -45,6 +45,10 @@ graph TD
 
 index.ts is an extremely important part in the construction of our lib, it is where the logic imports are scaled between folders and referenced at the time of import for use in the source code.
 
+---
+
+### Use in Spark
+
 With the use of the lib we needed to modify our source code of the spark generators, where all code generation logic was within the source code, with the use of our lib we removed all this part of the product logic and kept only the lib calls we created, keeping only one generator.ts within each respective language.
 
 This leaves us with the source code structure like this:

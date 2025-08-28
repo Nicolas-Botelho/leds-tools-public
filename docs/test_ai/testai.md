@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: Test.AI
+sidebar_position: 2
+title: Getting started
 ---
 # Tutorial de Instalação e Configuração do [Test.AI](https://marketplace.visualstudio.com/items?itemName=GabrieldePaulaBrunetti.test-ai)     
 

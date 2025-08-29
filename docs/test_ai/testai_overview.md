@@ -48,8 +48,9 @@ description: Contexto, sistema-alvo, mini-mundo e regras para validação da ext
 ---
 
 ## Contexto
-A **DevFlow Solutions** já lançou a extensão **Test.AI** para **VS Code**.  
-O desafio do semestre é **validar a confiabilidade, usabilidade e eficácia** da extensão por meio de **testes automatizados** planejados conforme as normas **IEEE 829/29119**.
+
+A extensão **Test.AI** para VS Code, utiliza IA para **gerar testes automatizados a partir de código**.  
+Agora, o time precisa **validar a própria extensão**, assegurando que ela **cumpre seus requisitos** e que os **artefatos de teste** produzidos **estão em conformidade com as normas IEEE (829/29119)**.
 
 ---
 
@@ -61,13 +62,6 @@ O desafio do semestre é **validar a confiabilidade, usabilidade e eficácia** d
 - **Sugestão de cenários BDD**.
 - **Integração com frameworks** de teste (**Cypress**, **Jest**, **xUnit**).
 - **CLI** para execução **fora do VS Code**.
-
----
-
-## Mini-mundo de aplicação — *SmartCart* (e-commerce simples)
-- **Funcionalidade central:** **cálculo de descontos** e **aplicação de cupons**.
-- O **Test.AI** será usado para **gerar testes automatizados** para o SmartCart.
-- Em seguida, será validado se os testes gerados **cobrem os requisitos funcionais e não funcionais**.
 
 ---
 

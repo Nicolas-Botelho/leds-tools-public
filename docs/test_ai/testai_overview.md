@@ -8,19 +8,25 @@ Presents the project`s developing planning.
 
 # [Test.AI](https://marketplace.visualstudio.com/items?itemName=GabrieldePaulaBrunetti.test-ai)
 
-### O que é o Test.AI
-O Test.AI é um software que utiliza modelos de linguagem (LLM) e agentes de inteligência artificial para gerar arquivos de teste automatizado de forma eficiente. Ele opera em duas etapas principais: Geração de Arquivos Gherkin e Geração de Steps em C# usando xUnit, a partir de documentos de requisitos no formato .andes, além de geração de planos de teste padrão IEEE.
+### What is Test.AI
+Test.AI is a software that uses language models (LLMs) and artificial intelligence agents to efficiently generate automated test files. It operates in two main stages: Gherkin File Generation and Step Generation in C# using xUnit, based on requirement documents in the .andes format, as well as the generation of IEEE-standard test plans.
 
-### Principais benefícios:
-- Reduz o tempo de escrita de testes.
-- Gera código de teste consistente e legível.
-- Gera planos de teste padrão IEEE.
-- Integra com VS Code e CLI para diferentes cenários de uso.
+### Key benefits:
+- Reduces test writing time.
+- Generates consistent and readable test code.
+- Produces IEEE-standard test plans.
+- Integrates with VS Code and CLI for different usage scenarios.
 
-### Como usar:
-1. Instale a extensão na aba de extensões do VS Code.
-2. Utilize um arquivo .andes ou arquivo gherkin .feature.
-3. Siga os passos em [Getting Started](./testai.md).
+### How to use:
+1. Install the extension from the VS Code extensions tab.
+2. Use a .andes file or a Gherkin .feature file.
+3. Follow the steps in [Getting Started](./testai.md).
+
+### Technologies Employed
+- Python
+- CrewAI
+- Nodejs
+
 ---
 
 

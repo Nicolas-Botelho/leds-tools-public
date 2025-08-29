@@ -29,7 +29,7 @@ Presents the project`s developing planning.
 
 ---
 
-## CrewAI + Python
+## [CrewAI](https://www.crewai.com) + [Python](https://www.python.org)
 
 ## Generating Gherkin Tests with CrewAI
 

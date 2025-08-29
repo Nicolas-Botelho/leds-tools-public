@@ -20,7 +20,7 @@ Presents the project`s developing planning.
 ### How to use in Visual Studio Code:
 1. Install the extension from the VS Code extensions tab.
 2. Use a **.andes** file or a Gherkin **.feature** file.
-3. To use the **feateures**, follow the steps in [Getting Started](./testai.md).
+3. To use the **feateures**, follow the steps in [Getting Started](./testai_guide.md).
 
 ### Technologies Employed
 - Python

@@ -16,4 +16,4 @@ This template should be placed by the user on a folder, in the same directory as
 
 ## 3. The program should be reworked to use event-based programming paradigm
 
-Change the MADE source code so that it works with being event-based and no longer condition-checking
+Change the MADE source code so that it works with event-based and no longer with condition-checking.

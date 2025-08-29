@@ -28,6 +28,3 @@ Test.AI is a software that uses language models (LLMs) and artificial intelligen
 - Nodejs
 
 ---
-
-
-

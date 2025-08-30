@@ -10,24 +10,7 @@ The **Oráculo** is an system that connects key team information by integrating 
 
 ---
 
-## 1️⃣ Get summaries of Discord conversations
-
-Quickly request a **contextual summary** of important discussions held on Discord.
-
-> **Example use:**
-
-```
-Summary of everything about Quality between May 1st and May 7th
-```
-
-📌 The Oráculo analyzes conversations and provides an organized, objective summary. Ideal for:
-- Quickly onboarding new members
-- Understanding decisions made
-- Keeping useful history for retrospectives
-
----
-
-## 2️⃣ Git Integration
+## 1️⃣ Git Integration
 
 Connected to the team's repository, the Oráculo answers key questions about development progress:
 
@@ -36,6 +19,7 @@ Connected to the team's repository, the Oráculo answers key questions about dev
 
 🧭 Use these questions to:
 - Identify bottlenecks
+- Get insights on a specific feature in development
 - Track what’s still open
 - Speed up planning meetings
 

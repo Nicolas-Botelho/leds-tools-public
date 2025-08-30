@@ -1,3 +1,9 @@
+---
+sidebar_position: 3
+title: How to use Andes
+---
+
+
 ### ANDES VS Code Extension
 
 #### Installation via Marketplace
@@ -40,3 +46,4 @@ Once you select an option, the corresponding files will be generated in your pro
 * **Basic Syntax**: Use `node bin/cli.js generate <source_file.andes>`.
 * **Options**: Use `-d, --destination <dir>` to specify the destination directory for the generated files. If omitted, a `generated` directory is created by default.
 * **Example**: To generate artifacts from the `requisitos.andes` file and save them to a folder named `documentacao`, run `node bin/cli.js generate/requisitos.andes -d./documentacao`. The tool will process and validate the file, and if there are no errors, it will create the artifacts in the specified destination
+

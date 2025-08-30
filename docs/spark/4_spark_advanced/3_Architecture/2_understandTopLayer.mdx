@@ -40,7 +40,7 @@ The files are in the .vpp format, which is read by the <a href={"https://www.vis
 classDiagram
     class Model
     
-    class AbstracElement
+    class AbstractElement
     
     class Module
     
@@ -87,9 +87,9 @@ classDiagram
         - defaultValue
     }
 
-    Model "1" -- "1..*" AbstracElement
-    AbstracElement <|-- Module
-    AbstracElement <|-- Import
+    Model "1" -- "1..*" AbstractElement
+    AbstractElement <|-- Module
+    AbstractElement <|-- Import
 
     Module -- Module
 

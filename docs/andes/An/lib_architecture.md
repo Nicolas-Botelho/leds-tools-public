@@ -12,7 +12,6 @@ src/
 ├── graph/ # Manipulação de grafos
 ├── model/ # Definições de modelos e tipos
 ├── renders/ # Renderização em diferentes formatos
-
 ```
 
 ---

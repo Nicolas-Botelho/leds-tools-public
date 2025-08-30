@@ -7,79 +7,50 @@ title: Front-end Architecture
 ```
 .
 └── frontend/vue-vite/
-    ├── cypress/
-    │   ├── e2e/
-    │   │   ├── generate.ts
-    │   │   └── step_definitions/
-    │   │       ├── generate.ts
-    │   │       └── generateDelete.ts
-    │   ├── generate.ts
-    │   └── pageObjects/
-    │       ├── generate.ts
-    │       ├── generateDetails.ts
-    │       ├── generateForms.ts
-    │       └── generateIndex.ts
     ├── generate.ts
     ├── helpers-generator.ts
+    ├── packagelock-generator.ts
     ├── public/
-    │   └── generate.ts
+    │   └── generate.ts
     └── src/
+        ├── api/
+        │   └── generate.ts
+        ├── assets/
+        │   └── generate.ts
         ├── components/
-        │   └── generate.ts
-        ├── composition/
-        │   └── generate.ts
+        │   ├── generate.ts
+        │   ├── icons/
+        │   │   └── generate.ts
+        │   └── sidenav/
+        │       └── generate.ts
         ├── generate.ts
         ├── layouts/
-        │   ├── full/
-        │   │   ├── customizer/
-        │   │   │   └── generate.ts
-        │   │   ├── generate.ts
-        │   │   ├── horizontal-header/
-        │   │   │   └── generate.ts
-        │   │   ├── horizontal-sidebar/
-        │   │   │   └── generate.ts
-        │   │   ├── logo/
-        │   │   │   └── generate.ts
-        │   │   ├── vertical-header/
-        │   │   │   └── generate.ts
-        │   │   └── vertical-sidebar/
-        │   │       └── generate.ts
-        │   └── generate.ts
+        │   └── generate.ts
+        ├── modules/
+        │   ├── api/
+        │   │   └── generate.ts
+        │   ├── controllers/
+        │   │   └── generate.ts
+        │   ├── generate.ts
+        │   ├── routes/
+        │   │   └── generate.ts
+        │   ├── types/
+        │   │   └── generate.ts
+        │   └── views/
+        │       ├── generateAttributes.ts
+        │       └── generate.ts
         ├── plugins/
-        │   └── generate.ts
-        ├── router/
-        │   └── generate.ts
-        ├── scss/
-        │   ├── components/
-        │   │   └── generate.ts
-        │   ├── generate.ts
-        │   ├── layout/
-        │   │   └── generate.ts
-        │   └── pages/
-        │       └── generate.ts
-        ├── services/
-        │   ├── generate.ts
-        │   └── requires/
-        │       └── generate.ts
+        │   └── generate.ts
+        ├── routes/
+        │   └── generate.ts
         ├── stores/
-        │   ├── apps/
-        │   │   ├── generate.ts
-        │   │   └── userprofile/
-        │   │       └── generate.ts
-        │   └── generate.ts
-        ├── theme/
-        │   └── generate.ts
+        │   └── generate.ts
+        ├── types/
+        │   └── generate.ts
         ├── utils/
-        │   └── generate.ts
+        │   └── generate.ts
         └── views/
-            ├── authentication/
-            │   └── generate.ts
-            ├── generate.ts
-            └── model/
-                ├── generate.ts
-                ├── generateDetails.ts
-                ├── generateForms.ts
-                └── generateIndex.ts
+            └── generate.ts
 ```
 ## Generators
 The generators, in TypeScript, creates the code, the files and the folders of the frontend.
@@ -93,44 +64,35 @@ The generators on the superiors parts create the structure and call the generato
 - Creates the App.vue and configuration files.
     - Vue's main file.
     - Calls the router (src/router).
-- Creates the cypress folder.
 - Creates the public folder.
 - Creates the src folder.
 
-### frontend/cypress
-Folder with subfolders responsible for generating the structure of Cypress, an automated front-end testing tool.
-
-- **e2e:** Defines the tests that are going to be made.
-- **PageObjects:** Applies the Page Object Pattern, organizing and encapsulating page elements and actions into reusable components.
-
 ### frontend/public
-Defines the public assets for the project, like the favicon image, environment variables and redirect configs.
+Defines the public assets for the project, like the favicon image, but still nothing really substantial.
 
 ### frontend/src
 Folder with multiple subfolders.
 Each subfolder is responsible for part of the frontend components.
 
-- **Components:** Defines the options for colors.
 
-- **Composition:** Defines the available funcionabilities (e.g.: get by id, post, delete).
+- **Api:** Defines and manage same API features, like axios, vite token and admin interceptors.
 
-- **Layout:** Defines the components disposition on the screen.
+- **Assets:** Defines the main style used in pages (tailwind) and same image files.
+
+- **Components:** Defines the main components, like datatables, cards and sidenavs.
+
+- **Layouts:** Defines the components disposition on the screen.
+
+- **Modules:** Defines the work of mainly generated entitities, proving routes, stores, controllers, API's, views, in order to provides CRUD operations.
 
 - **Plugins:** Imports Vuetify to style the components and define the default theme.
 
-- **Router:** Defines the routes for src/composition.
+- **Routes:** Defines the routes for homepage, login, etc.
 
-- **Scss:** Defines the components used in src/layout.
+- **Stores:** Makes the user configurations (e.g.: authentication, followers, posts) and manage UI elements, as snackbars.
 
-- **Services:** Generates the Factory and the Api (localhost port).
+- **Types:** Defines password validation rules.
 
-- **Stores:** Makes the user configurations (e.g.: authentication, followers, posts)
+- **Utils:** Defines password validation rules.
 
-- **Theme:** Defines the colors to light theme and dark theme.
-
-- **Utils:** Defines colors used in each theme.
-
-- **Views:**
-    - src/views/model: Create the responsible files for the Index, Detail and Form screens to each class.
-
-    - src/views/authentication: Create the responsible file for the user sidebar login.
+- **Views:** Defines a simple Login page to aplication.

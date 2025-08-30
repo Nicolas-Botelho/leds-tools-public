@@ -7,6 +7,37 @@ title: How to Use
 2. Define the [class diagram](6_lang.md)
 3. Save the file `.spark`
 4. Click with right botton and chose one option
-![Menu com opções de geração ao clicar com botão direito](./img/right-click.png)
+
+    ![Menu com opções de geração ao clicar com botão direito](./img/right-click.png)
 5. After that, Spark will generate the software artifacts
-![Exemplo de hierarquia de pastas gerada](./img/folders.png)
+
+    ![Exemplo de hierarquia de pastas gerada](./img/folders.png)
+
+## Example
+
+Below is an example of a `.spark` file:
+
+```spark
+Configuration {
+    software_name: "Morango"
+    about: "Moranguinho!"
+    language: csharp-clean-architecture
+}
+
+module Moranguinho {
+
+    entity Agricultor {
+        nome: string
+        identification: cpf
+        email_x: email
+        telefone: string
+        foto: file
+        Agricultor OneToMany Moranguinho.Propriedade
+    }
+
+    entity Propriedade {
+        nome: string
+        distrito: string
+    }
+}
+```

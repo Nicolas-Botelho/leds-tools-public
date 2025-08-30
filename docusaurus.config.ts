@@ -121,6 +121,12 @@ const config: Config = {
           label: 'Oraculo',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'todolist',
+          position: 'left',
+          label: 'ToDo List',
+        },
+        {
           href: 'https://github.com/leds-org',
           label: 'GitHub',
           position: 'right',

@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+title: Spark Compiler Artifact Map
+---
 
 # Spark Compiler Artifact Map
 

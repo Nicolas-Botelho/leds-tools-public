@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: An Advanced Study
+title: An Advanced Study of Grammar
 ---
 
 # A Brief About Grammar

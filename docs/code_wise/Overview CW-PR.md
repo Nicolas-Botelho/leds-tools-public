@@ -1,15 +1,15 @@
 ---
 sidebar_position: 1
-title: Visão Geral (Overview)
+title: Overview
 ---
 
 # CodeWise
 
-* Ferramenta instalável como uma biblioteca via pip que usa IA para analisar o código e automatizar a documentação de Pull Requests através de hooks do Git.
+* A library installable via pip that uses AI to analyze code and automate Pull Request documentation through Git hooks.
 
 
-## Funcionalidades Principais
-- **Geração de Título:** Cria títulos de PR claros e concisos seguindo o padrão *Conventional Commits*.
-- **Geração de Descrição:** Escreve descrições detalhadas baseadas nas alterações do código.
-- **Análise Técnica:** Posta um comentário no PR com um resumo executivo de melhorias de arquitetura, aderência a princípios S.O.L.I.D. e outros pontos de qualidade.
-- **Automação com hooks:** Integra-se ao seu fluxo de trabalho Git para rodar automaticamente a cada `git commit` e `git push`.
+## Key Features
+- **Title Generation:** Creates clear and concise PR titles following the *Conventional Commits* standard.
+- **Description Generation:** Writes detailed descriptions based on code changes.
+- **Technical Analysis:** Posts a comment on the PR with an executive summary of architectural improvements, adherence to S.O.L.I.D. principles, and other quality points.
+- **Automation with Hooks:** Integrates into your Git workflow to run automatically on every `git commit` and `git push`.

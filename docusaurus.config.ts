@@ -92,9 +92,9 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'code_wise',
+          sidebarId: 'spark',
           position: 'left',
-          label: 'Code Wise',
+          label: 'Spark',
         },
         {
           type: 'docSidebar',
@@ -102,11 +102,12 @@ const config: Config = {
           position: 'left',
           label: 'Made',
         },
+
         {
           type: 'docSidebar',
-          sidebarId: 'spark',
+          sidebarId: 'code_wise',
           position: 'left',
-          label: 'Spark',
+          label: 'Code Wise',
         },
         {
           type: 'docSidebar',
@@ -114,18 +115,23 @@ const config: Config = {
           position: 'left',
           label: 'Test.AI',
         },
+
         {
           type: 'docSidebar',
           sidebarId: 'oraculo',
           position: 'left',
           label: 'Oraculo',
         },
+
+
         {
           type: 'docSidebar',
           sidebarId: 'todolist',
           position: 'left',
           label: 'ToDo List',
         },
+
+
         {
           href: 'https://github.com/leds-org',
           label: 'GitHub',

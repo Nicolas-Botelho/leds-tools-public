@@ -3,7 +3,6 @@ sidebar_position: 7
 title: Andes Lib Architecture
 ---
 
-
 # Andes Lib - Documentation
 
 **Andes Lib** is an auxiliary library used by the `andes-gps-projeto` tool. It functions as a **compiler** and provides **interfaces and base classes** that represent elements of the Andes model.

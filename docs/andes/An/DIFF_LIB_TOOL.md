@@ -3,7 +3,6 @@ sidebar_position: 2
 title: The difference beetween the Andes Tool and Andes Lib
 ---
 
-
 # Difference between Andes Lib and Andes GPS Project
 
 The Andes architecture is made up of **two complementary parts**:

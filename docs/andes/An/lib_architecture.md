@@ -3,86 +3,86 @@ sidebar_position: 6
 title: Andes Lib Architecture
 ---
 
-## Visão Geral dos Módulos
+## Overview of the Modules
 
 ```
 src/
-├── application/ # Aplicações de alto nível (builders, creators, parsers)
-├── documentation/ #Integração com Docusaurus
-├── graph/ # Manipulação de grafos
-├── model/ # Definições de modelos e tipos
-├── renders/ # Renderização em diferentes formatos
+├── application/    # High-level applications (builders, creators, parsers)
+├── documentation/  # Integration with Docusaurus
+├── graph/          # Graph manipulation
+├── model/          # Model and type definitions
+├── renders/        # Rendering in different formats
 ```
 
 ---
 
-## Módulos
+## Modules
 
 ### 1. `application/`
-Contém a **lógica de aplicação** que orquestra os modelos e gera artefatos.
+Contains the **application logic** that orchestrates the models and generates artifacts.
 
-- **`domain/`** → Construção do domínio principal (ex.: `BuildDomain.ts`).
-- **`proporse/`** → Propósito e escopo dos módulos.
-- **`requisits/`** → Parsers de requisitos (`GraphParser`, `TableParser`, `RequirementsExtractor`).
-- **`usercase/`** → Criação e parsing de casos de uso.
-- **`made/`** → Criação de aplicações baseadas em **defaults** (backlog, épicos, stories).
-- **Arquivos raiz** → `ApplicationCreator.ts`, `DocusaurusCreator.ts`, `IO.ts`.
+- **`domain/`** → Main domain construction (e.g., `BuildDomain.ts`).
+- **`purpose/`** → Purpose and scope of the modules.
+- **`requirements/`** → Requirements parsers (`GraphParser`, `TableParser`, `RequirementsExtractor`).
+- **`usecase/`** → Creation and parsing of use cases.
+- **`made/`** → Creation of applications based on **defaults** (backlog, epics, stories).
+- **Root files** → `ApplicationCreator.ts`, `DocusaurusCreator.ts`, `IO.ts`.
 
-> ⚡ Papel: transformar os modelos (em `model/`) em aplicações utilizáveis/documentáveis.
+> ⚡ Role: transform the models (in `model/`) into usable/documentable applications.
 
 ---
 
 ### 2. `documentation/`
-Integração com **Docusaurus**, incluindo geração de diagramas e casos de uso.
+Integration with **Docusaurus**, including generation of diagrams and use cases.
 
 - **`docusaurus/`**
-  - `ClassDiagram.ts` → Criação de diagramas de classes.
-  - `ModelUseCases.ts` → Documentação de casos de uso.
-  - `DocksaurusService.ts` → Serviço central de integração.
-  - `application.ts` → Orquestrador.
+  - `ClassDiagram.ts` → Class diagram creation.
+  - `ModelUseCases.ts` → Use case documentation.
+  - `DocksaurusService.ts` → Central integration service.
+  - `application.ts` → Orchestrator.
 
-> ⚡ Papel: geração automática de documentação visual e técnica.
+> ⚡ Role: automatic generation of visual and technical documentation.
 
 ---
 
 ### 3. `graph/`
-- Contém `graph.ts`, responsável por manipulação de grafos usados em parsing, análise de requisitos e geração de modelos.
+- Contains `graph.ts`, responsible for manipulation of graphs used in parsing, requirements analysis, and model generation.
 
-> ⚡ Papel: suporte estrutural para relacionamentos entre entidades.
+> ⚡ Role: structural support for relationships between entities.
 
 ---
 
 ### 4. `model/`
-Define a **estrutura central do domínio**.
+Defines the **core structure of the domain**.
 
-- **`andes/`** → Classes e tipos de análise, projetos e requisitos.
-- **`made/`** → Classes ligadas a backlog, roadmap, sprint, tasks e times.
-- **`spark/`** → Estruturas de entidades, enums, pacotes e herança.
+- **`andes/`** → Classes and types for analysis, projects, and requirements.
+- **`made/`** → Classes related to backlog, roadmap, sprint, tasks, and teams.
+- **`spark/`** → Structures for entities, enums, packages, and inheritance.
 
-> ⚡ Papel: representar formalmente os elementos modelados pela linguagem Andes.
+> ⚡ Role: formally represent the elements modeled by the Andes language.
 
 ---
 
 ### 5. `renders/`
-Camada responsável por **exportar e visualizar** os modelos em diferentes formatos.
+Layer responsible for **exporting and visualizing** the models in different formats.
 
 - **`dsl/`**
-  - `made/` e `spark/` → Renders de elementos das DSL.
+  - `made/` and `spark/` → Renders for DSL elements.
 - **`markdown/`**
-  - `MermaidRender.ts` → Geração de diagramas em Mermaid (flowchart, statemachine).
-  - `FileRender.ts`, `MarkdownRender.ts` → Renderização de arquivos Markdown.
+  - `MermaidRender.ts` → Generation of Mermaid diagrams (flowchart, state machine).
+  - `FileRender.ts`, `MarkdownRender.ts` → Markdown file rendering.
 - **`plantuml/`**
-  - `PlantUmlRender.ts`, `classDiagram.ts` → Geração de diagramas UML.
-- **Outros renders** → `TableRender.ts`, `SectionRender.ts`, `ParagraphRender.ts`, etc.
+  - `PlantUmlRender.ts`, `classDiagram.ts` → UML diagram generation.
+- **Other renders** → `TableRender.ts`, `SectionRender.ts`, `ParagraphRender.ts`, etc.
 
-> ⚡ Papel: transformar modelos em representações visuais e documentais.
+> ⚡ Role: transform models into visual and documentary representations.
 
 ---
 
-## Fluxo Arquitetural
+## Architectural Flow
 
-1. **Modelagem** → O usuário define projetos, requisitos, casos de uso e backlog (em `model/`).
-2. **Aplicação** → O módulo `application/` processa os modelos, gera representações e prepara para documentação.
-3. **Graph** → Dá suporte estrutural na organização e relações entre entidades.
-4. **Documentação** → `documentation/` gera documentos estruturados e integra com Docusaurus.
-5. **Renderização** → `renders/` exporta em Markdown, UML, Mermaid e outros formatos visuais.
+1. **Modeling** → The user defines projects, requirements, use cases, and backlog (in `model/`).
+2. **Application** → The `application/` module processes the models, generates representations, and prepares for documentation.
+3. **Graph** → Provides structural support in the organization and relationships between entities.
+4. **Documentation** → `documentation/` generates structured documents and integrates with Docusaurus.
+5. **Rendering** → `renders/` exports in Markdown, UML, Mermaid, and other visual formats.

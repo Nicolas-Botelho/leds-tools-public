@@ -3,7 +3,6 @@ sidebar_position: 3
 title: How to use Andes
 ---
 
-
 ### ANDES VS Code Extension
 
 #### Installation via Marketplace

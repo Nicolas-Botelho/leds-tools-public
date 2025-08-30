@@ -3,7 +3,6 @@ sidebar_position: 1
 title: Overview
 ---
 
-
 # 🧙 Oráculo: Team wisdom in real time
 
 The **Oráculo** is an system that connects key team information by integrating Discord and Git data to offer a **real-time view** of what's happening in the project.

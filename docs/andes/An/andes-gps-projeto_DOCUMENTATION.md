@@ -3,7 +3,6 @@ sidebar_position: 5
 title: Andes Lib Architecture
 ---
 
-
 # Andes - Documentation
 
 The **Andes GPS Project** is the tool responsible for interpreting the Andes DSL, storing the model elements, and translating them into the **Andes Lib** types.

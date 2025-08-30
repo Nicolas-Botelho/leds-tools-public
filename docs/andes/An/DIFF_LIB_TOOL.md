@@ -1,3 +1,9 @@
+---
+sidebar_position: 2
+title: The difference beetween the Andes Tool and Andes Lib
+---
+
+
 # Difference between Andes Lib and Andes GPS Project
 
 The Andes architecture is made up of **two complementary parts**:
@@ -22,3 +28,4 @@ The Andes architecture is made up of **two complementary parts**:
   - Defining the **Andes grammar** (`.langium`)
   - **Parsing** models written in the Andes DSL
   - Translating the grammar elements into **Andes Lib** types (via `translatorutils`)
+

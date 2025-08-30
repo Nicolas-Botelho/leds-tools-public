@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Mini Mundo
+title: Mini-World
 description: Presents the project`s developing planning.
 ---
 

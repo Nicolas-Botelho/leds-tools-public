@@ -1,5 +1,5 @@
 ---
-sidebar_position: ?
+sidebar_position: 6
 title: Andes Lib Architecture
 ---
 
@@ -12,7 +12,6 @@ src/
 ├── graph/ # Manipulação de grafos
 ├── model/ # Definições de modelos e tipos
 ├── renders/ # Renderização em diferentes formatos
-
 ```
 
 ---

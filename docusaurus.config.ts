@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'LEDS DevTools (Not Official)',
+  title: 'LEDS ToolKit',
   favicon: 'img/favicon.ico',
   url: 'https://Nicolas-Botelho.github.io',
   baseUrl: '/leds-tools-public/',
@@ -92,9 +92,9 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'code_wise',
+          sidebarId: 'spark',
           position: 'left',
-          label: 'Code Wise',
+          label: 'Spark',
         },
         {
           type: 'docSidebar',
@@ -102,11 +102,12 @@ const config: Config = {
           position: 'left',
           label: 'Made',
         },
+
         {
           type: 'docSidebar',
-          sidebarId: 'spark',
+          sidebarId: 'code_wise',
           position: 'left',
-          label: 'Spark',
+          label: 'Code Wise',
         },
         {
           type: 'docSidebar',
@@ -114,12 +115,23 @@ const config: Config = {
           position: 'left',
           label: 'Test.AI',
         },
+
         {
           type: 'docSidebar',
           sidebarId: 'oraculo',
           position: 'left',
           label: 'Oraculo',
         },
+
+
+        {
+          type: 'docSidebar',
+          sidebarId: 'todolist',
+          position: 'left',
+          label: 'ToDo List',
+        },
+
+
         {
           href: 'https://github.com/leds-org',
           label: 'GitHub',

@@ -4,10 +4,22 @@ title: The Bottom Layer - an Overview
 ---
 
 # Overview
-![Achitecture Layers Overview](./imgs/architecture_layers_overview.png)
-<span style={{ textAlign: "center" }}>
-    Image 4: Achitecture Layers Overview
-</span>
+## Top Layer
+```mermaid
+graph TD
+    bin
+    examples
+    images
+    model
+    scripts
+    static
+```
+## Bottom Layer
+```mermaid
+graph TD
+    src --> test
+```
+
 The bottom layers are the most important parts of the project. This is where the real magic happens.
 
 ## Src (Source)

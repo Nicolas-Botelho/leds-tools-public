@@ -151,18 +151,18 @@ To specify some relations between classes you will need the `ManyToOne`, `OneToM
 Attention, the relation are seted in the referenced order, not referenced class. Check it example:
 ```
 entity One {...}
-entity Tow {
-    one ManyToOne Tow
+entity Two {
+    one ManyToOne Two
 }
 ```
 
 The code above will be translated in some generic OO Program Language Like
 ```
 class One {
-    Tow target;
+    Two target;
 }
 
-class Tow {
+class Two {
 
 }
 ```

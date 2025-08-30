@@ -1,175 +1,176 @@
-# Visão Geral
+# Overview
 
-O **Andes (Analysis as Code)** é uma ferramenta que ajuda Engenheiros de Requisitos de Software a modelar requisitos, casos de uso e atores, incluindo suas inter-relações. A partir desses modelos, o Andes gera automaticamente:
+**Andes (Analysis as Code)** is a tool that helps Software Requirements Engineers model requirements, use cases, and actors, including their interrelations. From these models, Andes automatically generates:
 
-- **Documentação em Markdown** com requisitos, casos de uso e atores;  
-- **Casos de teste end-to-end** em linguagem Gherkin;  
-- **Documentos para o Made**, auxiliando na gestão de projetos;  
-- **Documentos para o Spark**, apoiando o desenvolvimento de software.  
+- **Markdown documentation** with requirements, use cases, and actors;  
+- **End-to-end test cases** in Gherkin language;  
+- **Documents for Made**, assisting in project management;  
+- **Documents for Spark**, supporting software development.  
 
-Com o Andes, você transforma modelos de requisitos em documentação e testes prontos para uso, economizando tempo e reduzindo erros.
+With Andes, you transform requirements models into ready-to-use documentation and tests, saving time and reducing errors.
 
-# Arquivos de Teste
+# Test Files
 
 ```plaintext
 overview Todolist {
   name: "ToDoList"
-  description: "Sistema para organização de tarefas diárias"
-  purpose: "Ajudar os usuários a gerenciarem suas tarefas de forma simples, eficiente e organizada"
-  miniworld: "Usuários podem cadastrar tarefas, organizar por categorias, acompanhar prazos e status"
+  description: "System for organizing daily tasks"
+  purpose: "Help users manage their tasks in a simple, efficient, and organized way"
+  miniworld: "Users can register tasks, organize by categories, track deadlines and statuses"
   Architecture: python
 }
 
 requirements Requirements {
     name: "ToDo Requirements"
-    description: "Requisitos para o funcionamento do sistema To-Do List"
+    description: "Requirements for the functioning of the To-Do List system"
 
     functional_requirement RF01 {
-        description: "O sistema deve permitir que usuários se cadastrem com nome, email e senha"
-        priority: "Alta"
+        description: "The system must allow users to register with name, email, and password"
+        priority: "High"
     }
 
     functional_requirement RF02 {
-        description: "O sistema deve permitir autenticação dos usuários"
-        priority: "Alta"
+        description: "The system must allow user authentication"
+        priority: "High"
         depend: Requirements.RF01
     }
 
     functional_requirement RF03 {
-        description: "O sistema deve permitir que o usuário crie novas tarefas"
-        priority: "Alta"
+        description: "The system must allow users to create new tasks"
+        priority: "High"
     }
 
     functional_requirement RF04 {
-        description: "O sistema deve permitir que o usuário edite tarefas existentes"
-        priority: "Alta"
+        description: "The system must allow users to edit existing tasks"
+        priority: "High"
     }
 
     functional_requirement RF05 {
-        description: "O sistema deve permitir que o usuário exclua tarefas"
-        priority: "Alta"
+        description: "The system must allow users to delete tasks"
+        priority: "High"
     }
 
     functional_requirement RF06 {
-        description: "O sistema deve listar as tarefas do usuário"
-        priority: "Alta"
+        description: "The system must list the user's tasks"
+        priority: "High"
     }
 
     functional_requirement RF07 {
-        description: "O sistema deve permitir alterar o status das tarefas"
-        priority: "Alta"
+        description: "The system must allow changing the status of tasks"
+        priority: "High"
     }
 
     functional_requirement RF08 {
-        description: "O sistema deve permitir que o usuário crie e gerencie categorias"
-        priority: "Média"
+        description: "The system must allow users to create and manage categories"
+        priority: "Medium"
     }
 
     functional_requirement RF09 {
-        description: "O sistema deve permitir filtrar tarefas por status, data e categoria"
-        priority: "Média"
+        description: "The system must allow filtering tasks by status, date, and category"
+        priority: "Medium"
     }
 
     functional_requirement RF10 {
-        description: "O sistema pode enviar notificações sobre tarefas pendentes ou próximas do vencimento"
-        priority: "Baixa"
+        description: "The system may send notifications about pending or upcoming tasks"
+        priority: "Low"
     }
 
     non_functional_requirement RNF01 {
-        description: "O sistema deve ter autenticação segura com criptografia de senha"
-        priority: "Alta"
+        description: "The system must have secure authentication with password encryption"
+        priority: "High"
     }
 
     non_functional_requirement RNF02 {
-        description: "Deve ser uma aplicação responsiva, funcionando bem em desktop e mobile"
-        priority: "Alta"
+        description: "It must be a responsive application, working well on desktop and mobile"
+        priority: "High"
     }
 
     non_functional_requirement RNF03 {
-        description: "O backend deve ser desenvolvido em Django"
-        priority: "Alta"
+        description: "The backend must be developed in Django"
+        priority: "High"
     }
 
     non_functional_requirement RNF04 {
-        description: "O frontend deve ser desenvolvido em React"
-        priority: "Alta"
+        description: "The frontend must be developed in React"
+        priority: "High"
     }
 
     non_functional_requirement RNF05 {
-        description: "O sistema deve suportar pelo menos 100 usuários simultâneos"
-        priority: "Média"
+        description: "The system must support at least 100 simultaneous users"
+        priority: "Medium"
     }
 
     non_functional_requirement RNF06 {
-        description: "O tempo de resposta das requisições não deve exceder 2 segundos em 95% dos casos"
-        priority: "Alta"
+        description: "Request response time must not exceed 2 seconds in 95% of cases"
+        priority: "High"
     }
 }
 
-usecase Cadastro {
-    name: "Cadastro e Autenticação"
-    description: "Usuário se cadastra e faz login"
+usecase Registration {
+    name: "Registration and Authentication"
+    description: "User registers and logs in"
     requirements: Requirements.RF01, Requirements.RF02
 }
 
-usecase GerenciamentoTarefas {
-    name: "Gerenciamento de Tarefas"
-    description: "Usuário cria, edita, exclui e altera status das tarefas"
+usecase TaskManagement {
+    name: "Task Management"
+    description: "User creates, edits, deletes, and changes task statuses"
     requirements: Requirements.RF03, Requirements.RF04
 }
 
-usecase OrganizacaoTarefas {
-    name: "Organização de Tarefas"
-    description: "Usuário organiza tarefas por categoria, data e status"
+usecase TaskOrganization {
+    name: "Task Organization"
+    description: "User organizes tasks by category, date, and status"
     requirements: Requirements.RF06, Requirements.RF08
 }
 
-usecase Notificacoes {
-    name: "Notificações"
-    description: "Sistema envia lembretes ao usuário"
+usecase Notifications {
+    name: "Notifications"
+    description: "System sends reminders to the user"
     requirements: Requirements.RF10
 
-    event EventoX{
-        name: "Nome"
-        action: "O Usuário Faz Tal Coisa", "O Sistema Responde Tal Coisa"
+    event EventX{
+        name: "Name"
+        action: "User Does Something", "System Responds With Something"
     }
 }
 
 module ToDoApp {
-    description: "Módulo principal da aplicação To-Do List"
+    description: "Main module of the To-Do List application"
 
-    enum Prioridade {
-        baixa
-        media
-        alta
+    enum Priority {
+        low
+        medium
+        high
     }
 
     enum Status {
-        pendente
-        andamento
-        concluida
-        cancelada
+        pending
+        in_progress
+        completed
+        canceled
     }
 
-    // Desrição da classe Usuário
-    entity Usuario {
-        nome: string
+    // Description of the User class
+    entity User {
+        name: string
         _email: email
-        senha: string
+        password: string
     }
 
-    entity Categoria {
-        nome: string
-        usuario OneToMany Usuario
+    entity Category {
+        name: string
+        user OneToMany User
     }
 
-    entity Tarefa {
-        titulo: string
-        descricao: string
-        data_vencimento: date
-        prioridade uses Prioridade
+    entity Task {
+        title: string
+        description: string
+        due_date: date
+        priority uses Priority
         status uses Status
-        categoria ManyToOne Categoria
-        usuario ManyToOne Usuario
+        category ManyToOne Category
+        user ManyToOne User
     }
+
 }

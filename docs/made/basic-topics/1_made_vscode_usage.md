@@ -26,7 +26,7 @@ Create a new file with the `.made` extension in your project directory.
 2. Select **Generate Documentation**
 3. Markdown files will be generated in the same directory
 
-![Generate Documentation](../../img/extension_documentation.png)
+![Generate Documentation](../img/extension_documentation.png)
 
 ### 3. GitHub Integration Setup
 Create a `.env` file in the same directory as your `.made` file:
@@ -42,7 +42,7 @@ GITHUB_REPO=your_repository
 2. Select **Generate Github Issues**
 3. Issues and project structure will be created in GitHub
 
-![Generate Github Issues](../../img/extension_github_issues.png)
+![Generate Github Issues](../img/extension_github_issues.png)
 
 ## Features
 

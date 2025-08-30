@@ -1,6 +1,10 @@
+---
+sidebar_position: 1
+title: What is Made
+---
 # What is MADE
 
-![MADE Logo](../img/made_logo.png)
+![MADE Logo](./img/made_logo.png)
 
 MADE (Management as a Code) is an innovative plugin that helps Project Management and development teams efficiently create backlogs and sprints. It emphasizes process reuse and standardization, streamlining task management across projects.
 

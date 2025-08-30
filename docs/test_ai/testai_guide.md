@@ -2,9 +2,8 @@
 sidebar_position: 2
 title: Getting started
 ---
-# Usage Guide
 
-## How to Run Test.AI
+# How to Run Test.AI
 
 ### Prerequisites
 

@@ -118,8 +118,8 @@ In the Technical Area, you will need:
     - [Cursinho de TypeScript](https://www.youtube.com/watch?v=ppDsxbUNtNQ&t=498s).
 
 ### Suggested Route
-- See [An Advanced Study](./3_how_to_use/3_advanced_study.md) to understand the grammar tokens and their uses;
+- See [An Advanced Study](./2_how_to_use/4_advanced_study.md) to understand the grammar tokens and their uses;
 - See [Metamodel](./4_spark_advanced/1_metamodel.md) to check the grammar metamodel;
 - See [Architecture](./4_spark_advanced/3_Architecture/1_overview.mdx) to check the Spark source code architecture;
-- See [Library Architecture - Backend](./5_sparklib_advanced/4_backend/1_overview.md) to check the library backend scoped architecture;
+- See [Library Architecture - Backend](./5_sparklib_advanced/4_backend/1_Explanning.md) to check the library backend scoped architecture;
 - See [Library Architecture - Frontend](./5_sparklib_advanced/5_frontend/1_frontend.mdx) to check the library frontend scoped architecture;

@@ -16,10 +16,10 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'], // Example locales
-  },
+  // i18n: {
+  //   defaultLocale: 'en',
+  //   locales: ['en', 'fr'], // Example locales
+  // },
   markdown: {
     mermaid: true,
   },

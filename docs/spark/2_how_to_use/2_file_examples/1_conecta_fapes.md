@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Conecta Fapes - Spike Example
+title: Conecta Fapes - Spark Example
 ---
 
 # .spark File

@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'LEDS DevTools (Not Official)',
+  title: 'LEDS ToolKit',
   favicon: 'img/favicon.ico',
   url: 'https://Nicolas-Botelho.github.io',
   baseUrl: '/leds-tools-public/',
@@ -16,10 +16,10 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'], // Example locales
-  },
+  // i18n: {
+  //   defaultLocale: 'en',
+  //   locales: ['en', 'fr'], // Example locales
+  // },
   markdown: {
     mermaid: true,
   },

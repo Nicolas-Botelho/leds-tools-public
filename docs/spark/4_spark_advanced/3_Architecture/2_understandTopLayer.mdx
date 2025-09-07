@@ -4,10 +4,21 @@ title: Understand the Top Layer
 ---
 
 # Overview
-![Achitecture Layers Overview](./imgs/architecture_layers_overview.png)
-<span style={{ textAlign: "center" }}>
-    Image 2: Achitecture Layers Overview
-</span>
+## Top Layer
+```mermaid
+graph TD
+    bin
+    examples
+    images
+    model
+    scripts
+    static
+```
+## Bottom Layer
+```mermaid
+graph TD
+    src --> test
+```
 
 The top layer is, to some extent, independent from the others, since there is no communication between them. However, they certainly do communicate in the final and correct version of the tool.
 
@@ -23,12 +34,83 @@ This folder contains images used in the repository’s documentation and in the 
 ## Models
 This folder is responsible for part of the documentation. It contains files that model the tool's reserved keywords and how they communicate and interact, using the Unified Modeling Language (UML).
 
-The files are in the .vpp format, which is read by the <a href={"https://www.visual-paradigm.com/"}>Visual Paradigm tool</a>. The files in question were created with an unidentified version of the tool. Image 3 shows the internal content of the only file present in the folder, opened in the most recent version of the tool as of now, version 17.2. Therefore, it is not guaranteed that the internal content in the image is complete.
+The files are in the .vpp format, which is read by the <a href={"https://www.visual-paradigm.com/"}>Visual Paradigm tool</a>. The files in question were created with an unidentified version of the tool. The graph below shows the internal content of the only file present in the folder, opened in the most recent version of the tool as of now, version 17.2. Therefore, it is not guaranteed that the internal content in the image is complete.
 
-![Image 3: reserved keywords and how they communicate and interact](./imgs/spark_keywords_model.png)
-<span style={{ textAlign: "center" }}>
-    Image 3: reserved keywords and how they communicate and interact
-</span>
+```mermaid
+classDiagram
+    class Model
+    
+    class AbstractElement
+    
+    class Module
+    
+    class Type
+
+    class PrimitiveType
+
+    class Class {
+        - name
+    }
+
+    class InnerClass {
+        - description
+    }
+
+    class ExternalClass
+
+    class Import {
+        - moduleName
+    }
+    
+    class Attributes {
+        - name
+    }
+
+    class AssociationEnd {
+        - min
+        - max
+        - name
+    }
+
+    class Relation {
+        - name
+    }
+
+    class Method {
+        - name
+    }
+
+    class Parameter {
+        - name
+        - type
+        - optional
+        - defaultValue
+    }
+
+    Model "1" -- "1..*" AbstractElement
+    AbstractElement <|-- Module
+    AbstractElement <|-- Import
+
+    Module -- Module
+
+    Type <|-- Class
+    PrimitiveType --|> Type
+    Class <|-- InnerClass
+    Class <|-- ExternalClass
+
+    Class "1" -- "0..*" InnerClass : superclass
+    ExternalClass "1..*" -- "1" Import
+    InnerClass "1"--"0..*" Attributes
+    Attributes "0..*"--"1" Type
+    InnerClass "1"--"1..*" AssociationEnd
+    InnerClass "1"--"1..*" Method
+
+    Method "0..*"--"1" Type
+    Method "1"--"0..*" Parameter
+    
+    AssociationEnd "1"--"1" Relation : from
+    Relation "1"--"1" AssociationEnd : to
+```
 
 ## Scripts
 This folder is responsible for containing some code that will potentially be called by the **bin** folder but is not part of the CLI. Currently, its files are responsible for preparing the environment with the folder structure, ensuring that the generation of subsequent files does not encounter errors.

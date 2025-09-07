@@ -44,7 +44,7 @@ For Minimal API-Based Architectures:
 - Portuguese Content:
   - [Aprendendo a Minimal API em C# .NET](https://youtu.be/86FXD0faF4o?si=jH3IA0o6obpKS2qn);
 
-About the frontend: it will generate a LEDS internal architecture, so it will be properly explained in section [Vue Plus Vuetify](./advanced_stuffs/Architecture/generated_arch/frontend/1_vuePlusVuetfy.mdx).
+About the frontend: it will generate a LEDS internal architecture, so it will be properly explained in section [Vue Plus Vuetify](./5_sparklib_advanced/5_frontend/3_generated_arch/2_vuePlusVuetfy.mdx).
 
 If you want to understand what REST APIs are, you can also check:
 - PhD Thesis:
@@ -54,16 +54,16 @@ If you want to understand what REST APIs are, you can also check:
 
 ### Suggested Route
 - See [Overview](./1_overview.md) to understand the Spark principles and objectives;
-- See [Installation](./2_installation.md) to install and use Spark;
-- See [Writing a File](./3_how_to_use/1_writting_a_file.md) to learn how to write your first ".spark"; and
-- See [File Examples](./3_how_to_use/2_file_examples/1_conecta_fapes.md) to see example files.
+- See [Installation](./2_how_to_use/3_run_and_debug.md) to install and use Spark;
+- See [Writing a File](./2_how_to_use/1_writting_a_file.md) to learn how to write your first ".spark"; and
+- See [File Examples](./2_how_to_use/2_file_examples/1_conecta_fapes.md) to see example files.
 
 ### For Advanced Users
-- See [Understanding the Generated Code Architecture](./advanced_stuffs/Architecture/generated_arch/0_introduction.mdx) to understand the generated code architecture;
-    - For Clean Architecture C#, see [Clean Architecture Csharp](./5_sparklib_advanced/4_backend/2_generated_arch/4_Csharp_Clean.md);
-    - For MVC Django Rest Framework Architecture in Python, see [Python Architecture](./5_sparklib_advanced/4_backend/2_generated_arch/2_Python.md);
-    - For Minimal API C#, see [Minimal API Csharp](./5_sparklib_advanced/4_backend/2_generated_arch/3_Csharp_Minimal-API.md); and
-    - For MVC Spring-Boot Architecture in Java, see [Java Architecture](./5_sparklib_advanced/4_backend/2_generated_arch/1_Java.md).
+- See [Understanding the Generated Code Architecture](./5_sparklib_advanced/1_OverView.md) to understand the generated code architecture;
+    - For Clean Architecture C#, see [Clean Architecture Csharp](./5_sparklib_advanced/4_backend/4_generated_arch/4_Csharp_Clean.md);
+    - For MVC Django Rest Framework Architecture in Python, see [Python Architecture](./5_sparklib_advanced/4_backend/4_generated_arch/2_Python.md);
+    - For Minimal API C#, see [Minimal API Csharp](./5_sparklib_advanced/4_backend/4_generated_arch/3_Csharp_Minimal-API.md); and
+    - For MVC Spring-Boot Architecture in Java, see [Java Architecture](./5_sparklib_advanced/4_backend/4_generated_arch/1_Java.md).
 
 ## I Want to Improve the Spark Code
 When dealing with Spark, you must know that there are two different source codes. The first is about the grammar specifier, called Spark, and the compiler, called SparkLib. To improve the code, you need to integrate both of them.

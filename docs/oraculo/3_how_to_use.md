@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+title: How to use
+---
+
 # How to use
 
 Follow these steps to run the project locally:
@@ -33,7 +38,7 @@ Follow these steps to run the project locally:
     - Create your local account. Dont worry, your email wont be verified
     - After logged in, go to [http://localhost:3000/admin/functions](http://localhost:3000/admin/functions)
     - In the **Functions** page, click on **import functions**
-    - Select the file [**pipeline_api.json**](`src/assets/open_web_ui/pipeline_api.json`) in the `src/assets/open_web_ui/` folder
+    - Select the file **pipeline_api.json**( at `src/assets/open_web_ui/pipeline_api.json`) in the `src/assets/open_web_ui/` folder
     - Activate the function through a slider on the top-right corner
     - Return to the initial page with [http://localhost:3000](localhost:3000)
 

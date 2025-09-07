@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Moranguinho - Spike Example
+title: Moranguinho - Spark Example
 ---
 
 In free translate, Litle Strawbery
@@ -35,7 +35,11 @@ module Moranguinho {
 ```
 
 # Class Diagram
-TODO
+![Model Generated Class Diagram](./assets/imgs/2_morango_class_diagram.png)
 
 # Output
-TODO: images thats contain the generated code :)
+![Model Generated Backend](./assets/imgs/2_morango_backend.png)
+
+![Model Generated Frontend](./assets/imgs/2_morango_frontend.png)
+
+![Model Generated Documentation](./assets/imgs/2_morango_documentation.png)

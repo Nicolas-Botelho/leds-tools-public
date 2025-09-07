@@ -91,27 +91,22 @@ graph TD
     E --> F["Data Processing"]
     F --> G["Output Generation"]
     G --> H["Documentation"]
-    G --> I["GitHub Integration"]
-    G --> J["Charts & Diagrams"]
+    G --> I["Backend Code"]
+    G --> J["Frontend Code"]
 ```
 
 ## Usage Patterns
 
-### Direct Library Usage
-```typescript
-import { ReportManager } from 'Spark-lib-beta';
-
-const reportManager = new ReportManager();
-await reportManager.githubPush(token, org, repo, project, epics, stories, tasks);
-```
-
 ### Tool-mediated Usage
 ```bash
 # Via CLI
-Spark-cli github project.Spark
+spark-cli generate path/to/spark/file
 
 # Via VS Code Extension
-# Right-click > Generate GitHub Issues
+# Right-click > Generate All
+# Right-click > Generate Backend
+# Right-click > Generate Frontend
+# Right-click > Project Documentation
 ```
 
 This architecture allows Spark to be both user-friendly through the tool interface and powerful through direct library integration.

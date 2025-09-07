@@ -33,4 +33,5 @@ Spark uses a Domain-Specific Language (DSL) that consists of:
 2. Use VS Code extension or CLI to process the files.
 
 ## Benefits
-TODO:
+1. Quicker start on big software projects; and
+2. Padronized code structure for backend and frontend code.

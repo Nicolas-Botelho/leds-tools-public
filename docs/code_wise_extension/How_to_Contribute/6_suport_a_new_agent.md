@@ -4,4 +4,4 @@ title: Suport a new agent
 description: How to incert a new agent
 ---
 
-Crie uma váriavel const, da qual recebe de maneira assincrona o método build, com a frase para o agente como parametro e adicionar a lista de agentes para ser invocado e depois adicionar a resposta desse novo agente no texto do arquivo commit_analysis_report.md. 
+Create a const variable, from which the build method asynchronously receives, with the phrase for the agent as a parameter and add the list of agents to be invoked and then add the response from this new agent in the text of the commit_analysis_report.md file.

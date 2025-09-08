@@ -23,7 +23,7 @@ You can use Spark in both, or in VSCode with it pluggin (recommend), or it cli w
 2. Fill it with your class, packages and specific some project configuration and save it;
 3. Click with right mouse button (os api button 2); and
 4. Select option you want (or generate all, or generate backend, or generate frontend or generate documentation).
-![Menu generation option when os api button2 trigged](../img/right-click.png)
+![Menu generation option when os api button2 trigged](../../img/right-click.png)
 
 
 # Using it CLI in Node
@@ -48,4 +48,4 @@ You can use Spark in both, or in VSCode with it pluggin (recommend), or it cli w
 
 
 # Output Hierarchy Examples
-![Generated Hierarchy Example](../img/folders.png)
+![Generated Hierarchy Example](../../img/folders.png)

@@ -15,10 +15,10 @@ This constructor allows you to define:
 
 ```js
    Configuration {
-       software_name: "SlaveOne" // Software's name
-       about: "Slave One project example" // Description about the software
+       software_name: "MyCoolSoftware" // Software's name
+       about: "MyCoolSoftware project example" // Description about the software
        language: python // Language and pattern used to develop the software
-       database_name: "SlaveOneDB" // Database Name
+       database_name: "MyCoolSoftwareDB" // Database Name
    }
 ```
 For the `language`, we have the options: `python, java, csharp-minimal-api, csharp-clean-architecture`.

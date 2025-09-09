@@ -13,6 +13,15 @@ const config: Config = {
   organizationName: 'Nicolas-Botelho', // Usually your GitHub org/user name.
   projectName: 'leds-tools-public', // Usually your repo name.
 
+  // original repository and url
+  // url: `https://leds-org.github.io`,
+  // baseUrl: '/',
+
+  // // GitHub pages deployment config.
+  // // If you aren't using GitHub pages, you don't need these.
+  // organizationName: 'leds-org', // Usually your GitHub org/user name.
+  // projectName: 'leds-tools', // Usually your repo name.
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 

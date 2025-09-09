@@ -1,79 +1,12 @@
 ---
 sidebar_position: 1
-title: Code Wise
+title: Overview
 ---
 **Code Wise** is a Visual Studio Code extension that automatically **analyzes** your codebase at pre-commit, leveraging state-of-the-art Large Language Models (LLMs) such as OpenAI, Gemini, Groq, Ollama, Mistral, and others. It helps developers identify **architectural** improvements, **SOLID** principle violations, **code smells**, and suggest **design patterns** — all seamlessly integrated into their daily workflow.
 
 ### Overview
 
 Once installed and configured, CodeWise operates silently in the background. It monitors your Git repository for new commits and automatically triggers a set of intelligent agents that review the code changes, offering structured, insightful feedback saved directly into your workspace.
-
-### Installation
-
-To use this action in your repository, follow the steps below:
-
-1. Install the extension locally
-2. Configure your .env file with the appropriate LLM credentials:
-    (name of your provider)_API_KEY=your-api-key (ex. GEMINI_API_KEY)
-    MODEL=your-model-name
-    PROVIDER=gemini 
-    - Supported providers:
-        openai
-
-        google (Gemini)
-
-        groq
-
-        ollama
-
-        mistral
-
-        cohere
-
-        anthropic
-
-        together  
-
-3. Ensure your project has the necessary dependencies:
-    * "@types/node": "20.x"
-    * "typescript": "^5.8.3"
-    * "node.js": "^v20.18.0"
-    * "npm": "^11.4.1"
-    * Visual Studio Code (v1.85+)
-
-### How to Use
-
-This action runs automatically on every commit. It analyzes code files changed in the commit and sends a file (commit_analysis_report.md) with analysis about performance and code smell suggestions to the root of projects. 
-
-### Workflow Breakdown
-
-The following steps describe the internal process behind CodeWise:
-
-1. **Git Commit Detection**  
-   CodeWise watches the `.git/logs/HEAD` file to detect when a new commit is made. This enables real-time, non-intrusive monitoring of commit activity without requiring Git hooks.
-
-2. **Extract Commit Information**  
-   Once a commit is detected, the system extracts:
-   - Commit hash, author, date, and message
-   - Changed files and corresponding diffs
-
-   This information is formatted and saved in a temporary file (`gitInput.txt`) to serve as input for the language models.
-
-3. **Invoke LLM Agents in Parallel**  
-   CodeWise leverages a set of specialized agents (built on top of LangChain + LangGraph), each trained to analyze a specific dimension of the codebase:
-   - **Architect Agent**: Analyzes folder structure and determines the architectural pattern used (e.g., MVC, Clean Architecture).
-   - **Integration Agent**: Reviews module coupling and suggests integration improvements.
-   - **SOLID Agent**: Detects violations of SOLID principles and proposes corrections.
-   - **Framework Analyst**: Suggests alternative frameworks or improvements in the usage of existing ones.
-   - **Design Pattern Advisor**: Recommends design patterns suitable for scalability, reusability, or maintainability.
-
-4. **Merge Results into Markdown Report**  
-   The results from all LLMs are aggregated into a structured markdown report (`commit_analysis_report.md`), which includes individual sections for each agent’s findings.
-
-5. **Clean Up and Await Next Commit**  
-   After the report is generated, temporary files are deleted and the extension continues monitoring for future commits.
-
-This automated cycle ensures that every commit is reviewed by AI before it even reaches the remote repository — enabling proactive quality control and faster feedback for developers.
 
 ### Features
 

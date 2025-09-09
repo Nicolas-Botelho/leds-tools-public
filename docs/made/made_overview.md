@@ -2,38 +2,34 @@
 
 ![MADE Logo](../img/made_logo.png)
 
-MADE (Management as a Code) is an innovative plugin that helps Project Management and development teams efficiently create backlogs and sprints. It emphasizes process reuse and standardization, streamlining task management across projects.
+MADE (Management As Code) is a lightweight ecosystem — a DSL, a VS Code extension and a CLI — designed to make project management repeatable and automatable. Use MADE to declare projects, teams, backlogs and sprints using simple `.made` files, then generate documentation, metrics and GitHub issues from that single source of truth.
 
-## Key Features
+## Key features (short)
 
-- **Process Reuse**: Define processes once, reuse across projects
-- **Standardization**: Consistent project management across teams
-- **GitHub Integration**: Push directly to GitHub Issues and Projects
-- **Documentation Generation**: Auto-generate markdown reports
-- **Agile Support**: Built-in support for Epics, Stories, Tasks, and Sprints
+- Process reuse: declare workflows once and reuse them across projects.
+- Standardized project structure: consistent reports and artifacts for all teams.
+- GitHub integration: optionally create or update Issues and Projects.
+- Documentation generation: produce markdown reports and SVG visuals automatically.
+- Agile primitives: built-in concepts for Epics, Stories, Tasks and Sprints.
 
-## Core Components
+## Core building blocks
 
-MADE uses a Domain-Specific Language (DSL) that consists of:
+- Project: top-level metadata (name, dates, description).
+- Team: team and member declarations.
+- Backlog: epics, stories and tasks with estimates and links.
+- TimeBox: sprint/timebox declarations with start/end dates and capacity.
+- Process: reusable workflows you can attach to items.
+- Roadmap: milestones and releases.
 
-- **Project**: Configuration and metadata
-- **Team**: Team members and organization
-- **Backlog**: Epics, Stories, and Tasks
-- **TimeBox**: Sprints and iterations
-- **Process**: Reusable workflows
-- **Roadmap**: Milestones and releases
+## Typical workflow (very short)
 
-## How It Works
+1. Author a `.made` file describing the project.
+2. Run the VS Code command or CLI to parse the file.
+3. Generate Markdown reports or sync with GitHub.
+4. Iterate on the DSL to keep documentation and issues in sync.
 
-1. Write your project structure in `.made` files using the DSL
-2. Use VS Code extension or CLI to process the files
-3. Generate documentation or push to GitHub automatically
-4. Maintain consistency across projects with reusable processes
+## Why use MADE
 
-## Benefits
-
-- **Consistency**: Standardized approach to project management
-- **Efficiency**: Reduce repetitive setup work
-- **Integration**: Seamless GitHub workflow integration
-- **Documentation**: Auto-generated, always up-to-date documentation
-- **Collaboration**: Clear team structure and responsibility definition
+- Keep a single source of truth for planning and docs.
+- Automate repetitive setup (issues, projects, roadmaps).
+- Make reports reproducible and reviewable by stakeholders.

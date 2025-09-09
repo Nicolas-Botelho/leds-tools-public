@@ -185,9 +185,7 @@ roadmap projectroadmap {
 
 ## Complete Example File
 
-```made
-// Download complete example: example.made
-```
+[Made Example](./exemplo.made)
 
 This example demonstrates:
 - Project setup with team members

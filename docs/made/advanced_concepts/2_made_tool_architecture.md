@@ -1,5 +1,7 @@
 # Tool Architecture
 
+This page describes the architecture of the MADE *Tool* (the VS Code extension and CLI). It is written for developers who need to understand how the editor, language server and CLI interact with the parser and the application layer.
+
 The MADE Tool (`leds-tools-made`) is built as a VS Code extension with CLI support, using Langium for DSL processing.
 
 ## Architecture Overview

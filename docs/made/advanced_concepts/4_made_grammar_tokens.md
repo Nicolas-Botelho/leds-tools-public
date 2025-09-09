@@ -1,5 +1,7 @@
 # Grammar Tokens
 
+This page lists the most important grammar tokens and example snippets for the MADE DSL. It is a practical reference for authors and contributors who edit or extend the grammar.
+
 The MADE DSL uses Langium grammar to define its syntax. Understanding the grammar structure is essential for developers extending or integrating with MADE.
 
 ## Grammar Structure

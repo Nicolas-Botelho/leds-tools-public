@@ -1,13 +1,13 @@
 # How to Contribute
 
-We welcome contributions to make MADE better! This guide outlines how to contribute and suggests key features that would significantly improve the tool.
+This guide explains how to set up a local development environment, where to find good starter tasks, and the project's contribution workflow.
 
 ## Getting Started
 
 ### Development Setup
 1. Fork the repository
 2. Clone your fork locally
-3. Install dependencies: `npm install`
+3. Install dependencies: Node 16+ recommended. Use a reproducible install: `npm ci` (or `npm install` for first-time installs)
 4. Build the project: `npm run build`
 5. Run tests: `npm test`
 
@@ -218,6 +218,8 @@ class ImprovedGitHubMapper {
 - Check existing issues before creating new ones
 - Join community discussions
 - Review architecture documentation first
+
+- Where to start: look for issues labeled `good-first-issue` or `help wanted`, or try one of the items in the "Priority Feature Requests" section above.
 
 ## Recognition
 

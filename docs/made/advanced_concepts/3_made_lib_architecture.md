@@ -1,5 +1,7 @@
 # Library Architecture
 
+This document explains the MADE *Library* — the reusable processing core that converts parsed models into documentation, charts and integrations. It's aimed at contributors who will add renderers, tests or new outputs.
+
 The MADE Library (`leds-tools-made-lib`) is the core processing engine that handles data transformation, documentation generation, and GitHub integration.
 
 ## Architecture Overview

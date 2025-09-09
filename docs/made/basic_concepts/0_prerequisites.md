@@ -1,122 +1,104 @@
-# Pré-requisitos — MADE
+# Prerequisites — MADE (Beginner's Guide)
 
-Este documento é um template rápido para listar os pré-requisitos mínimos (ambiente, conhecimentos e arquivos) necessários para usar a ferramenta MADE. Use-o como uma folha de referência ou inclua trechos em guias de onboarding.
-
-## Objetivo
-- Explicar, de forma direta, o que precisa estar disponível antes de rodar o gerador MADE.
-- Fornecer comandos de verificação rápidos e um checklist acionável para preparar o ambiente.
+This file explains what you should know and have installed before using the MADE tool. 
+## Quick plan (what this file covers)
+- Environment preparation checklist
+- Essential concepts to understand before using MADE
+- Quick verification commands and example usage
+- Curated learning links and resources
 
 ---
 
-## 1) Requisitos de sistema (software)
-- Node.js: versão 16+ recomendada (verifique com `node -v`).
-- npm: use `npm ci` para instalações reproduzíveis; `npm -v` para checar a versão.
-- Git: para clonar e colaborar (`git --version`).
-- (Opcional) Docker: quando usar o container runtime (`docker --version`).
-- (Opcional) VS Code: para usar a extensão e a experiência de linguagem.
+## Immediate checklist (do this first)
+- [ ] Install Node.js (recommended LTS 16 or 18)
+- [ ] Install Git and configure your name/email
+- [ ] Install a code editor (VS Code recommended)
+- [ ] Clone this repository and run `npm ci`
+- [ ] Have at least one `.made` example file (for example `project.made`)
 
-Comandos de verificação rápidos (executar no terminal):
+---
+
+## 1) System requirements (software)
+- Node.js (LTS): https://nodejs.org/ — install version 16.x or 18.x.
+- npm (bundled with Node.js): https://docs.npmjs.com/
+- Git: https://git-scm.com/docs — used to clone and manage the repository.
+- VS Code (recommended): https://code.visualstudio.com/ — for extension usage and editing.
+
+Quick verification commands (PowerShell):
 
 ```pwsh
 node -v
 npm -v
 git --version
-# opcional
+# optional
 docker --version
 ```
 
----
-
-## 2) Requisitos de conhecimento
-- Noções básicas de linha de comando (clonar, instalar pacotes, executar scripts).
-- Conhecimentos mínimos de TypeScript/JavaScript para entender a base do projeto (opcional para usar o CLI).
-- Familiaridade com GitHub (issues, PRs, actions) se pretende usar a integração com GitHub.
-- Noções sobre Markdown e estruturas de pastas (para criar templates e revisar saídas geradas).
+Tip: use `npm ci` in CI environments or when you want a reproducible install; use `npm install` while actively developing.
 
 ---
 
-## 3) Arquivos e configurações esperadas no projeto
-- Arquivo de entrada principal: `project.made` (ou outros `.made`) — contém a definição do projeto, equipes, backlog e sprints.
-- Arquivo de configuração local (opcional): `.maderc` ou `made.config.json` — indica pastas de saída, templates, hooks e opções.
-- Pasta de templates: `.made-templates/` — modelos de issue/markdown (se usados).
-- Pasta de output típica: `reports/` ou `project/` — onde o MADE escreverá os artefatos gerados.
-
-Exemplo mínimo de `.maderc` (sintaxe ilustrativa):
-
-```json
-{
-  "output": "./reports",
-  "templates": "./.made-templates",
-  "github": {
-    "createIssues": false
-  }
-}
-```
+## 2) Essential concepts (what's useful to know)
+- Command line basics: cloning repositories, running scripts (e.g. `npm run build`), and inspecting files.
+  - Quick start: [What is Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+- JavaScript / TypeScript: MADE is written in TypeScript. You don't need to be an expert, but basic knowledge helps.
+  - JavaScript (MDN): [JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+  - TypeScript handbook: [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- Markdown: MADE generates Markdown files; knowing Markdown helps customize templates and review outputs.
+  - Markdown guide: [Markdown Guide](https://www.markdownguide.org/)
+- GitHub (Issues / Projects / Actions): if you plan to use the GitHub integration, understand issues, milestones and projects.
+  - GitHub Issues: [GitHub Issues](https://docs.github.com/en/issues)
+  - GitHub Projects: [GitHub Projects](https://docs.github.com/pt/issues/planning-and-tracking-with-projects)
+- Langium (optional, for language/grammar contributors): a framework used for building DSLs and language servers.
+  - Langium docs: [Langium Docs](https://langium.org/)
+- Mermaid (optional): used to render diagrams and timelines inside Markdown.
+  - Mermaid: [Mermaid](https://mermaid.js.org/)
 
 ---
 
-## 4) Checklist de preparação (rápido)
-- [ ] Clonar o repositório `git clone <repo>`
-- [ ] Instalar Node.js 16+ e npm
-- [ ] Executar `npm ci` na raiz do projeto
-- [ ] Confirmar presença de um arquivo `.made` de exemplo (`project.made`)
-- [ ] (Opcional) Criar `.maderc` com configuração mínima
-- [ ] (Opcional) Abrir o projeto no VS Code e instalar a extensão `leds-tools-made` (se disponível)
+## 3) Expected project files and configuration
+- `.made` input files (e.g. `project.made`): contain project, team, backlog, and sprint definitions.
 
 ---
 
-## 5) Comandos de uso rápido (sanity checks)
-- Gerar artefatos em modo dry-run:
-
-```pwsh
-npx made-cli generate --input project.made --output ./reports --dry-run
-```
-
-- Gerar artefatos reais:
-
+## 4) Quick commands (sanity checks)
 ```pwsh
 npx made-cli generate --input project.made --output ./reports
 ```
 
-- Executar extensão localmente (desenvolvimento VS Code):
+- Developing the extension (VS Code):
 
 ```pwsh
-# na pasta da extensão
+# in the extension folder
+npm ci
 npm run build
-# abrir VS Code na pasta e usar "Run Extension" (F5)
+# open in VS Code and press F5 to run the extension in dev mode
 ```
 
-> Substitua `npx made-cli` pelo comando real do seu CLI se o nome do pacote binário for diferente.
+> Replace `npx made-cli` with the actual CLI binary name if different.
 
 ---
 
-## 6) Problemas comuns e como checar
-- Erro: "command not found" → verifique `node`/`npm` no PATH.
-- Erro: permissões de escrita no diretório de saída → ajuste permissões ou escolha outra pasta.
-- Duplicação de issues no GitHub → desative `createIssues` em `.maderc` enquanto testa.
-- Templates não encontrados → confirme o caminho configurado em `.maderc` e presença de arquivos em `.made-templates/`.
+## 5) Common problems and how to fix them
+- "command not found" → confirm Node/npm are in your PATH.
+- Permission errors when writing to `./reports` → change output folder or fix permissions.
+- Missing GitHub API token → create a personal access token and export it as `GITHUB_TOKEN` or use a `.env` file.
+
+Helpful links for troubleshooting:
+- GitHub personal access tokens: [GitHub Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- npm common errors: [npm Common Errors](https://docs.npmjs.com/common-errors)
 
 ---
 
-## 7) Como usar este template
-- Copie este arquivo para `docs/made/basic_concepts/0_prerequisites.md` (já criado) e personalize as seções: versão de Node, nome do CLI, caminhos de saída.
-- Inclua links locais para os exemplos (`basic_concepts/3_made_examples.md`) e para guias de instalação específicos.
-
----
-
-## 8) Campos que você pode preencher / adaptar
-- Versão mínima de Node (ex.: `16.20.0`)
-- Nome real do binário CLI (ex.: `made`, `leds-made`)
-- Caminhos padrão que o seu projeto usa para saída e templates
-- Comandos de build/test específicos para sua base
-
----
-
-## 9) Verificação final (smoke test)
-1. `npm ci`
-2. `npx made-cli generate --input project.made --output ./reports --dry-run`
-3. Confirmar que nenhuma exceção de parser ocorreu e que os arquivos esperados (pelo menos `01_overview.md`) aparecem no relatório de saída.
-
----
-
-*Template gerado automaticamente — edite conforme as necessidades do seu projeto.*
+## 6) Recommended learning resources (curated links)
+- Node.js docs: [Node.js Docs](https://nodejs.org/en/docs/)
+- npm docs: [npm Docs](https://docs.npmjs.com/)
+- Pro Git book: [Pro Git](https://git-scm.com/book/en/v2)
+- VS Code Extension (publishing): [VS Code Docs](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+- JavaScript (MDN): [JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+- TypeScript handbook: [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- Markdown basic syntax: [Markdown Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- Langium (DSL/LSP): [Langium](https://langium.org/)
+- Mermaid diagrams: [Mermaid](https://mermaid.js.org/)
+- Docusaurus (docs site): [Docusaurus](https://docusaurus.io/docs)
+- GitHub Issues & Projects: [GitHub Issues & Projects](https://docs.github.com/en/issues)

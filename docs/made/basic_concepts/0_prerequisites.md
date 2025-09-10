@@ -1,6 +1,16 @@
-# Prerequisites — MADE (Beginner's Guide)
+# Prerequisites — MADE (Complete Setup Guide)
+
+**Welcome!** This guide will get you ready to use MADE, even if you're completely new to project management tools. We'll walk through everything step-by-step.
 
 This file explains what you should know and have installed before using the MADE tool. 
+## What you'll accomplish in this guide
+- ✅ All required software installed and working
+- ✅ Basic understanding of key concepts  
+- ✅ A working MADE setup you can test
+- ✅ Knowledge of where to get help
+
+*Estimated time: 15-20 minutes*
+
 ## Quick plan (what this file covers)
 - Environment preparation checklist
 - Essential concepts to understand before using MADE
@@ -9,12 +19,17 @@ This file explains what you should know and have installed before using the MADE
 
 ---
 
-## Immediate checklist (do this first)
-- [ ] Install Node.js (recommended LTS 16 or 18)
-- [ ] Install Git and configure your name/email
-- [ ] Install a code editor (VS Code recommended)
-- [ ] Clone this repository and run `npm ci`
-- [ ] Have at least one `.made` example file (for example `project.made`)
+## Step 1: Setup Checklist (do these in order)
+
+**Follow these steps one by one** — we'll explain each below:
+
+- [ ] Install Node.js (recommended LTS 16 or 18) — *the engine that runs MADE*
+- [ ] Install Git and configure your name/email — *for downloading code*
+- [ ] Install a code editor (VS Code recommended) — *for writing project files*
+- [ ] Clone this repository and run `npm ci` — *get MADE on your computer*
+- [ ] Have at least one `.made` example file (for example `project.made`) — *something to test with*
+
+**💡 Tip**: Don't skip the verification steps below — they'll save you troubleshooting time later!
 
 ---
 
@@ -30,8 +45,6 @@ Quick verification commands (PowerShell):
 node -v
 npm -v
 git --version
-# optional
-docker --version
 ```
 
 Tip: use `npm ci` in CI environments or when you want a reproducible install; use `npm install` while actively developing.
@@ -62,8 +75,22 @@ Tip: use `npm ci` in CI environments or when you want a reproducible install; us
 ---
 
 ## 4) Quick commands (sanity checks)
+- Generate artifacts:
+
 ```pwsh
-npx made-cli generate --input project.made --output ./reports
+npx made-cli generate project.made -d ./reports
+```
+
+- GitHub sync:
+
+```pwsh
+npx made-cli github project.made
+```
+
+- Get help:
+
+```pwsh
+npx made-cli --help
 ```
 
 - Developing the extension (VS Code):
@@ -74,8 +101,6 @@ npm ci
 npm run build
 # open in VS Code and press F5 to run the extension in dev mode
 ```
-
-> Replace `npx made-cli` with the actual CLI binary name if different.
 
 ---
 

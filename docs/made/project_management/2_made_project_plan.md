@@ -1,43 +1,43 @@
 ---
 sidebar_position: 1
-title: Plano de Projeto — MADE
-description: Plano do projeto para melhorar a extensão e biblioteca MADE, com objetivos, backlog, entregas, equipe e cronograma.
+title: Project Plan — MADE
+description: Project plan to improve the MADE extension and library, with objectives, backlog, deliveries, team and schedule.
 ---
 
-# Plano de Projeto — MADE
+# Project Plan — MADE
 
-Resumo: plano de execução para entregar melhorias na extensão e na biblioteca MADE em 4 meses, com orçamento estimado de até 100 horas de desenvolvimento.
+Summary: execution plan to deliver improvements to the MADE extension and library in 4 months, with an estimated budget of up to 100 development hours.
 
-## Justificativas
-Iniciar a gestão exige muito tempo: hoje é necessário criar tasks individualmente, o que atrasa o início do projeto e reduz a produtividade. Automatizar a geração de issues e relatórios permitirá iniciar e gerir projetos com menos fricção.
+## Justification
+Starting project management requires a lot of time: today it's necessary to create tasks individually, which delays project start and reduces productivity. Automating issue and report generation will allow starting and managing projects with less friction.
 
-## Objetivo SMART
-Entregar uma extensão e uma biblioteca MADE melhoradas em 4 meses, consumindo no máximo 100 horas de desenvolvimento voluntário, entregando funcionalidades que reduzam o tempo de gestão e evitem duplicação de issues.
+## SMART Objective
+Deliver an improved MADE extension and library in 4 months, consuming at most 100 hours of voluntary development, delivering functionalities that reduce management time and avoid issue duplication.
 
-## Benefícios
-- Agilizar geração de issues e relatórios no GitHub.
-- Facilitar o gerenciamento da equipe e do projeto.
-- Aumentar a produtividade e reduzir custos e tempo de gerenciamento.
+## Benefits
+- Speed up issue and report generation on GitHub.
+- Facilitate team and project management.
+- Increase productivity and reduce management costs and time.
 
-## Produto
-- Extensão VS Code (MADE) melhorada.
-- Biblioteca (lib) de processamento/refinamento (MADE-lib) atualizada e modularizada.
+## Product
+- Improved VS Code extension (MADE).
+- Updated and modularized processing/refinement library (MADE-lib).
 
-## Requisitos (principais)
-- Evitar duplicação de issues no GitHub.
-- Permitir criação e uso de novos templates para issues e relatórios.
-- Mapear componentes do MADE para estruturas adequadas no GitHub (issues, milestones, projects).
-- Refatorar código para seguir paradigma baseado em eventos (event-driven).
-- Documentar melhorias e descrever funcionalidades do sistema.
+## Requirements (main)
+- Avoid GitHub issue duplication.
+- Allow creation and use of new templates for issues and reports.
+- Map MADE components to appropriate GitHub structures (issues, milestones, projects).
+- Refactor code to follow event-driven paradigm.
+- Document improvements and describe system functionalities.
 
-## Stakeholders externos
-- Gestores de projeto
+## External Stakeholders
+- Project managers
 - LEDS
-- Alunos do IFES
+- IFES students
 
-## Equipe
+## Team
 
-### Gestão
+### Management
 - Breno Amâncio
 - Breno Scalzer
 - Jonathan Silva
@@ -46,7 +46,7 @@ Entregar uma extensão e uma biblioteca MADE melhoradas em 4 meses, consumindo n
 - Paulo Lopes
 - Rafael Borges
 
-### Projeto (desenvolvimento)
+### Project (development)
 - Davi Alvarenga
 - Douglas Bolis
 - Heitor Oliveira
@@ -55,68 +55,68 @@ Entregar uma extensão e uma biblioteca MADE melhoradas em 4 meses, consumindo n
 - Lucas Pianissola
 - Vinícius Cunha
 
-## Restrições
-- Prazo total: 4 meses.
-- Tecnologias obrigatórias: TypeScript, Langium, arquitetura MVC.
-- Orçamento de desenvolvimento: máximo de 100 horas alocadas (voluntárias ou patrocinadas).
+## Constraints
+- Total deadline: 4 months.
+- Required technologies: TypeScript, Langium, MVC architecture.
+- Development budget: maximum of 100 allocated hours (voluntary or sponsored).
 
-## Premissas
-- Todos os membros das equipes estarão disponíveis conforme cronograma.
-- Haverá financiamento/recursos necessários para execução.
-- Entrega do projeto dentro do prazo de 4 meses.
+## Assumptions
+- All team members will be available according to schedule.
+- There will be necessary funding/resources for execution.
+- Project delivery within the 4-month deadline.
 
-## Grupo de entregas (roadmap por entregas)
+## Delivery Group (roadmap by deliveries)
 
-1ª entrega — Documentação Docusaurus (1 sprint)
-- Objetivo: Estruturar a documentação pública do MADE, incluir guias de uso, exemplos e templates.
-- Critérios de aceitação: site Docusaurus publicado na branch `gh-pages` ou como build estável; páginas essenciais (overview, pré-requisitos, exemplos) prontas.
-- Prazo: 29/08/2025
+1st delivery — Docusaurus Documentation (1 sprint)
+- Objective: Structure MADE public documentation, include usage guides, examples and templates.
+- Acceptance criteria: Docusaurus site published on `gh-pages` branch or as stable build; essential pages (overview, prerequisites, examples) ready.
+- Deadline: 08/29/2025
 
-2ª entrega — Mapear componentes do MADE para GitHub (4 sprints)
-- Objetivo: Definir e implementar o mapeamento entre componentes MADE e artefatos GitHub (issues, milestones, projects)
-- Critérios de aceitação: mapeamento documentado; prova de conceito que cria issues/milestones corretamente em repositório de teste.
-- Prazo final: 26/09/2025
+2nd delivery — Map MADE components to GitHub (4 sprints)
+- Objective: Define and implement mapping between MADE components and GitHub artifacts (issues, milestones, projects)
+- Acceptance criteria: mapping documented; proof of concept that correctly creates issues/milestones in test repository.
+- Final deadline: 09/26/2025
 
-3ª entrega — Evitar duplicação de issues e GitHub Templates (4 sprints)
-- Objetivo: Implementar detecção/evitação de duplicatas e suporte a templates configuráveis para issues
-- Critérios de aceitação: execução da integração sem gerar duplicatas em múltiplas execuções; templates aplicáveis via `.made-templates/` ou config.
-- Prazo final: 28/10/2025
+3rd delivery — Avoid issue duplication and GitHub Templates (4 sprints)
+- Objective: Implement duplicate detection/avoidance and support for configurable issue templates
+- Acceptance criteria: integration execution without generating duplicates in multiple executions; templates applicable via `.made-templates/` or config.
+- Final deadline: 10/28/2025
 
-4ª entrega — Paradigma event-driven (4 sprints)
-- Objetivo: Refatorar a arquitetura para um modelo baseado em eventos, possibilitando plugins e maior extensibilidade
-- Critérios de aceitação: arquitetura documentada; módulos importantes usando EventBus e handlers testáveis; documentação de contribuição para plugins.
-- Prazo final: 28/11/2025
+4th delivery — Event-driven paradigm (4 sprints)
+- Objective: Refactor architecture to an event-based model, enabling plugins and greater extensibility
+- Acceptance criteria: documented architecture; important modules using EventBus and testable handlers; contribution documentation for plugins.
+- Final deadline: 11/28/2025
 
-## Backlog (priorizado)
+## Backlog (prioritized)
 
-| ID | Feature | Descrição | Importância | Proposta / Resultado esperado |
-| -- | ------- | --------- | ----------- | ----------------------------- |
-| 1  | Evitar duplicação de issues | Comparar issues existentes e evitar criação de duplicatas | 100 | Reduzir ruído no repositório e evitar trabalho duplicado |
-| 2  | Templates de Issue | Suporte a `.made-templates/` e variáveis em templates | 95 | Templates reutilizáveis por projeto, melhor formatação |
-| 3  | Mapeamento MADE→GitHub | Mapear Project/Sprint/Team → Projects/Milestones/Assignees | 90 | Integração mais natural com fluxo do GitHub |
-| 4  | Event-driven refactor | Introduzir EventBus e handlers para processamento modular | 90 | Melhor extensibilidade e testes unitários |
-| 5  | Refatoração MVC & modular | Separar core (lib) da camada de IO e UI | 80 | Facilitar publicação como pacote NPM e reuso |
-| 6  | Documentação e exemplos | Melhorar docs, exemplos e guias de contribuição | 75 | Reduzir barreira de entrada e acelerar testes por contribuintes |
+| ID | Feature | Description | Importance | Proposal / Expected Result |
+| -- | ------- | ----------- | ---------- | -------------------------- |
+| 1  | Avoid issue duplication | Compare existing issues and avoid creating duplicates | 100 | Reduce repository noise and avoid duplicate work |
+| 2  | Issue Templates | Support for `.made-templates/` and variables in templates | 95 | Reusable templates per project, better formatting |
+| 3  | MADE→GitHub Mapping | Map Project/Sprint/Team → Projects/Milestones/Assignees | 90 | More natural integration with GitHub workflow |
+| 4  | Event-driven refactor | Introduce EventBus and handlers for modular processing | 90 | Better extensibility and unit tests |
+| 5  | MVC & modular refactor | Separate core (lib) from IO and UI layer | 80 | Facilitate NPM package publication and reuse |
+| 6  | Documentation and examples | Improve docs, examples and contribution guides | 75 | Reduce entry barrier and accelerate testing by contributors |
 
-## Riscos
-- Ferramentas (CI, Docker, GitHub APIs) apresentarem problemas ou indisponibilidade.
-- Conflitos de horários entre integrantes, reduzindo entregas planejadas.
-- Ausências inesperadas ou imprevistos pessoais dos membros.
-- Bloqueios externos que impeçam progresso (dependências de terceiros, aprovações).
+## Risks
+- Tools (CI, Docker, GitHub APIs) presenting problems or unavailability.
+- Schedule conflicts between members, reducing planned deliveries.
+- Unexpected absences or personal issues of members.
+- External blocks that prevent progress (third-party dependencies, approvals).
 
-Mitigações sugeridas:
-- Planejar contingência mínima (buffer de 10–15% do tempo estimado).
-- Comunicações semanais e confirmação de disponibilidade antes de cada sprint.
-- Ter um repositório de teste para validar integrações com GitHub sem impactar produção.
+Suggested mitigations:
+- Plan minimum contingency (10–15% buffer of estimated time).
+- Weekly communications and availability confirmation before each sprint.
+- Have a test repository to validate GitHub integrations without impacting production.
 
-## Métricas de sucesso
-- Entregas concluídas nas datas dos marcos com critérios de aceitação atendidos.
-- Redução mensurável de duplicação de issues em testes (meta: < 1% de duplicatas geradas).
-- Cobertura mínima de testes unitários nos módulos refatorados (meta: 60%+ nas áreas críticas).
-- Tempo total de desenvolvimento dentro do limite de 100 horas estimadas (monitorar via timesheets simples).
+## Success Metrics
+- Deliveries completed on milestone dates with acceptance criteria met.
+- Measurable reduction of issue duplication in tests (goal: < 1% duplicates generated).
+- Minimum unit test coverage in refactored modules (goal: 60%+ in critical areas).
+- Total development time within the estimated 100-hour limit (monitor via simple timesheets).
 
-## Linha do tempo resumida
-- 29/08/2025 — 1ª Entrega (Docusaurus)
-- 26/09/2025 — 2ª Entrega (Mapeamento MADE→GitHub)
-- 28/10/2025 — 3ª Entrega (Evitar duplicação + Templates)
-- 28/11/2025 — 4ª Entrega (Event-driven)
+## Summary Timeline
+- 08/29/2025 — 1st Delivery (Docusaurus)
+- 09/26/2025 — 2nd Delivery (MADE→GitHub Mapping)
+- 10/28/2025 — 3rd Delivery (Avoid duplication + Templates)
+- 11/28/2025 — 4th Delivery (Event-driven)

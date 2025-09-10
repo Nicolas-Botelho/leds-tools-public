@@ -1,191 +1,289 @@
 # Tool Architecture
 
-This page describes the architecture of the MADE *Tool* (the VS Code extension and CLI). It is written for developers who need to understand how the editor, language server and CLI interact with the parser and the application layer.
+> 🏗️ **For Developers**: Understanding MADE's internal architecture for debugging, extending, or contributing to the project.
 
-The MADE Tool (`leds-tools-made`) is built as a VS Code extension with CLI support, using Langium for DSL processing.
+## 🎯 Quick Overview
 
-## Architecture Overview
-
-```mermaid
-graph TD
-    A[VS Code Extension] --> B[Language Server]
-    A --> C[CLI Interface]
-    B --> D[Langium Parser]
-    C --> D
-    D --> E[AST Generation]
-    E --> F[Application Manager]
-    F --> G[Domain Applications]
-    G --> H[MADE Library Integration]
+MADE Tool processes `.made` files through this pipeline:
+```
+.made file → Language Server → ApplicationManager → Sprint Ceremonies → JSON Output → made-lib-beta Integration
 ```
 
-## Core Components
+**Key Components:**
+- **Language Server**: Parses and validates `.made` files using Langium
+- **ApplicationManager**: Orchestrates processing through "Sprint Ceremonies" (Singleton pattern)
+- **Applications**: Handle specific domains (Team, Process, Backlog, etc.)
+- **Builders**: Construct objects using Builder pattern
+- **made-lib-beta**: Generates final outputs (docs, GitHub integration)
 
-### 1. Language Definition (`language/`)
+---
 
-#### DSL Grammar (`made.langium`)
+## 🧱 Core Components
+
+### 1. Language Layer (`src/language/`) 📝
+- **`made.langium`** - Grammar definition for the MADE DSL
 ```langium
-grammar Made
-
-entry Model:
-    (project=Project)
-    (components+=(Team|Process|Backlog|TimeBox|Roadmap))*
+Project: 'project' name=ID '{' components+=Component* '}';
+Team: 'team' name=ID '{' teammember+=TeamMember* '}';
 ```
-
-#### Key Files
-- `made.langium` - Main grammar definition
-- `backlog.langium` - Backlog-specific grammar
-- `team.langium` - Team structure grammar
-- `process.langium` - Process definition grammar
-- `roadmap.langium` - Roadmap and milestone grammar
-
-#### Generated Code
-- `ast.ts` - AST node definitions
-- `grammar.ts` - Parser implementation
-- `module.ts` - Language service configuration
-
-### 2. Application Layer (`application/`)
-
-#### Application Manager
+- **`main.ts`** - Language server entry point
+- **`made-validator.ts`** - Semantic validation rules
 ```typescript
-class ApplicationManager {
-    private applications: Map<string, BaseApplication> = new Map();
-    
-    async initializeApplications() {
-        // Initialize domain-specific applications
-        this.applications.set('project', new ProjectApplication());
-        this.applications.set('backlog', new BacklogApplication());
-        this.applications.set('team', new TeamApplication());
-        // ...
-    }
+checks: {
+    Project: validateProject,
+    Team: validateTeamSize
 }
 ```
+- **`generated/`** - Auto-generated AST types (don't edit these!)
 
-#### Domain Applications
-- **ProjectApplication**: Project metadata management
-- **BacklogApplication**: Epic/Story/Task processing
-- **TeamApplication**: Team member and role management
-- **TimeBoxApplication**: Sprint and iteration handling
-- **ProcessApplication**: Workflow and process definition
+### 2. Application Layer (`src/cli/project_management/`) 🏭
 
-### 3. VS Code Extension (`extension/`)
+**ApplicationManager (Singleton)** orchestrates processing through 6 "Sprint Ceremonies":
+1. **MADE Backlog** - Creates issues from epics/stories/tasks
+2. **MADE Team** - Processes team member assignments  
+3. **MADE Projects** - Generates project structure
+4. **MADE Processes** - Creates reusable process templates
+5. **MADE Roadmap** - Builds release planning
+6. **MADE Documentation** - Generates reports
 
-#### Main Extension File
+**Key Patterns:**
+- **AbstractApplication** - Base class for all applications
 ```typescript
-export function activate(context: vscode.ExtensionContext): void {
-    registerGeneratorCommand(context);
-    client = startLanguageClient(context);
-}
-
-function registerGeneratorCommand(context: vscode.ExtensionContext): void {
-    const generateDocumentation = () => {
-        const filepath = vscode.window.activeTextEditor?.document.fileName;
-        if(filepath) {
-            generateAction(filepath, { only_project_documentation: true });
-        }
-    };
-    
-    context.subscriptions.push(
-        vscode.commands.registerCommand("made.generateDocumentation", generateDocumentation)
-    );
+abstract class AbstractApplication {
+    protected db: LowSync<any>;
+    abstract initialize(): Promise<void>;
 }
 ```
-
-#### Features
-- **Syntax Highlighting**: Based on Langium grammar
-- **IntelliSense**: Auto-completion and error detection
-- **Commands**: Right-click context menu actions
-- **Language Server**: Real-time validation
-
-### 4. CLI Interface (`cli/`)
-
-#### Main CLI Entry Point
+- **Builder Pattern** - IssueBuilder, ProcessBuilder, etc.
 ```typescript
-export const generateAction = async (fileName: string, opts: GenerateOptions): Promise<void> => {
-    const services = createMadeServices(NodeFileSystem).Made;
-    const model = await extractAstNode<Model>(fileName, services);
-    generate(model, fileName, opts.destination, opts);
-};
-
-export const githubPushAction = async (fileName: string, token: string, org: string, repo: string): Promise<void> => {
-    const services = createMadeServices(NodeFileSystem).Made;
-    const model = await extractAstNode<Model>(fileName, services);
-    
-    // Process components and push to GitHub
-    const reportManager = new ReportManager();
-    await reportManager.githubPush(token, org, repo, project, epics, stories, tasks);
-};
+const issue = new IssueBuilder()
+    .setTitle("User Login")
+    .setAssignee(teamMember)
+    .build();
+```
+- **LowDB** - JSON persistence for data storage
+```typescript
+this.db.data = { issues: [], teams: [] };
+this.db.write();
+```
+- **Service Layer** - Utilities for file ops and HTTP calls
+```typescript
+createFile(path, content);
+send(url, data, headers);
 ```
 
-#### Command Structure
-- `generate` - Documentation generation
-- `github` - GitHub integration
-- `--help` - Command help
+### 3. User Interfaces 🎨
 
-## Processing Flow
-
-### 1. **File Parsing**
+**VS Code Extension (`src/extension/main.ts`)**
+- Commands: `made.generateDocumentation`, `made.generateGithubIssues`
 ```typescript
-// Parse .made file into AST
-const services = createMadeServices(NodeFileSystem).Made;
-const model = await extractAstNode<Model>(fileName, services);
+vscode.commands.registerCommand("made.generateDocumentation", () => {
+    generateAction(filepath, { only_project_documentation: true });
+});
+```
+- Language server integration for syntax highlighting
+- Environment variable support for GitHub integration
+```bash
+GITHUB_TOKEN=ghp_xxxx
+GITHUB_ORG=myorg
+GITHUB_REPO=myproject
 ```
 
-### 2. **Component Processing**
+**CLI (`src/cli/main.ts`)**
+```bash
+npx made-cli generate project.made -d ./output    # Generate docs
+npx made-cli github project.made -t token -o org -r repo  # Push to GitHub
+```
+
+---
+
+## 🔄 Processing Flow
+
+```
+.made file → Validation → AST Generation → ApplicationManager → Sprint Ceremonies → JSON Files → made-lib-beta → Outputs
+```
+
+1. **Parse & Validate**: Langium parses `.made` file and validates syntax
 ```typescript
-// Extract different component types
-const backlogs = model.components.filter(c => c.$type === 'Backlog');
+const document = await langiumServices.shared.workspace.LangiumDocuments.getOrCreateDocument(uri);
+const parseResult = document.parseResult;
+```
+2. **Extract Components**: Sort AST nodes by type (Team, Backlog, etc.)
+```typescript
 const teams = model.components.filter(c => c.$type === 'Team');
-const timeboxes = model.components.filter(c => c.$type === 'TimeBox');
+const backlogs = model.components.filter(c => c.$type === 'Backlog');
 ```
-
-### 3. **Data Transformation**
+3. **Run Ceremonies**: ApplicationManager executes 6 initialization steps
 ```typescript
-// Transform AST to domain objects
-const { epics, stories, tasks, backlogList } = processBacklogs(backlogs, assigneeMap);
-const teamList = processTeams(teamsRaw);
-const project = processProject(model.project);
+for (const ceremony of this.ceremonies) {
+    await ceremony.execute();
+}
 ```
+4. **Build Objects**: Use Builder pattern to create structured data
+5. **Persist Data**: Save to JSON files using LowDB
+6. **Generate Outputs**: made-lib-beta creates docs and GitHub integration
 
-### 4. **Output Generation**
+---
+
+## 🔗 made-lib-beta Integration
+
+MADE Tool handles parsing and data extraction. **made-lib-beta** handles business logic and outputs:
+
 ```typescript
-// Generate outputs via library
+// After processing, integrate with library
 const reportManager = new ReportManager();
-await reportManager.createReport(dbPath); // Documentation
-await reportManager.githubPush(/* GitHub integration */);
+await reportManager.createReport(dbPath);           // Generate docs
+await reportManager.githubPush(/* parameters */);   // GitHub sync
 ```
 
-## Key Technologies
+**Data Flow**: `MADE Tool (AST Processing) → JSON Files → made-lib-beta (Business Logic) → Outputs`
 
-### Langium Framework
-- **Grammar Definition**: Declarative DSL syntax
-- **Parser Generation**: Automatic parser creation
-- **Language Server**: VS Code integration
-- **Validation**: Real-time error checking
+---
 
-### TypeScript Benefits
-- **Type Safety**: Compile-time error detection
-- **IntelliSense**: Better development experience
-- **Refactoring**: Safe code changes
-- **Documentation**: Self-documenting code
+## 🔧 Key Processing Functions
 
-## Extension Points
+These functions handle the core transformations:
 
-### Custom Applications
 ```typescript
-class CustomApplication extends BaseApplication {
-    async process(component: CustomComponent): Promise<void> {
-        // Custom processing logic
-    }
+// AST to Issue conversion
+function astEpicToIssue(epic: Epic, sprintId: string): Issue { 
+    return { id: epic.id, title: epic.name, sprint: sprintId }; 
+}
+
+// Backlog processing
+function processBacklogs(backlogs: Backlog[]): Issue[] {
+    return backlogs.flatMap(b => b.epics.map(e => astEpicToIssue(e, b.sprint)));
+}
+
+// Team assignment
+function buildAssigneeMap(team: Person[]): Map<string, Person> {
+    return new Map(team.map(p => [p.role, p]));
 }
 ```
 
-### Grammar Extensions
+**Pattern**: AST Node → Processing Function → Structured Data → JSON Storage
+
+---
+
+## 🎨 VS Code Extension
+
+**Two main commands**: made.generateDocumentation and made.generateGithubIssues
+
+```typescript
+// Extension activation
+export function activate(context: vscode.ExtensionContext): void {
+    registerGeneratorCommand(context);        // Documentation generator
+    registerGitHubCommand(context);          // GitHub integration
+    client = startLanguageClient(context);    // Language features
+}
+```
+
+**Features**: Syntax highlighting, auto-completion, validation, and commands through language server.
+
+```typescript
+// Language server provides these features automatically:
+// - Syntax highlighting for .made files
+// - Error detection (red squiggles)
+// - Auto-completion as you type
+// - Hover information for elements
+```
+
+---
+
+## 🔌 Extension Points
+
+### 1. Langium Grammar Extensions
+
+**Extend the DSL syntax** by modifying `src/language/made.langium`:
+
 ```langium
-// Add new component types
-CustomComponent:
-    'custom' id=ID '{' 
-        'property:' property=STRING
+// Add new grammar rules
+CustomBlock:
+    'custom' name=ID '{'
+        properties+=CustomProperty*
+    '}';
+
+CustomProperty:
+    key=ID ':' value=STRING;
+
+// Extend existing rules
+Project:
+    'project' name=ID '{'
+        // ... existing properties
+        customBlocks+=CustomBlock*  // ← Add your extension
     '}';
 ```
 
-This architecture provides a solid foundation for DSL processing while maintaining flexibility for extensions and customizations.
+After grammar changes:
+1. Run `npm run langium:generate` to regenerate AST types
+2. Update validation rules in `made-validator.ts`
+3. Add processing logic in ApplicationManager ceremonies
+
+### 2. Processing Extensions
+
+**InitializationStep pattern** for custom processing:
+
+```typescript
+// Add custom initialization steps
+class CustomDataStep extends InitializationStep {
+    execute(): void {
+        // Your custom processing logic
+    }
+}
+```
+
+**Real extension points:**
+- **Langium Grammar**: Add new DSL syntax and rules
+```langium
+// Add new component type
+CustomResource: 'resource' name=ID '{' properties+=Property* '}';
+```
+- **Sprint Ceremonies**: Add new initialization steps
+```typescript
+class ResourceProcessingStep extends InitializationStep {
+    execute(): void { /* process custom resources */ }
+}
+```
+- **Builder Classes**: Extend existing builders
+```typescript
+class EnhancedIssueBuilder extends IssueBuilder {
+    setPriority(p: string) { this.issue.priority = p; return this; }
+}
+```
+- **Service Functions**: Add utility functions
+```typescript
+export function validateEmail(email: string): boolean {
+    return /\S+@\S+\.\S+/.test(email);
+}
+```
+- **Application Types**: Create new applications
+```typescript
+class ResourceApplication extends AbstractApplication {
+    async initialize() { /* handle resources */ }
+}
+```
+- **Validation Rules**: Add semantic validation in `made-validator.ts`
+```typescript
+const validateTeamSize: ValidationCheck<Team> = (team, accept) => {
+    if (team.teammember.length > 10) {
+        accept('warning', 'Large team size', { node: team });
+    }
+};
+```
+
+---
+
+## 📚 Summary
+
+**MADE Tool Architecture** follows a clear pipeline:
+
+1. **Language Server** - Parses `.made` files using Langium
+2. **ApplicationManager** - Orchestrates 6 "Sprint Ceremonies" 
+3. **Processing Functions** - Transform AST to structured data
+4. **JSON Storage** - Persist data using LowDB
+5. **made-lib-beta** - Generate final outputs
+
+**Key Patterns**: Singleton, Builder, Service Layer  
+**Extension Points**: InitializationStep, Builders, Services
+
+The architecture separates parsing (MADE Tool) from business logic (made-lib-beta), making it maintainable and extensible.

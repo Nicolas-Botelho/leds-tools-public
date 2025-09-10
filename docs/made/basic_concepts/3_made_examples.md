@@ -1,6 +1,19 @@
-# MADE Example Files
+# MADE Examples — Learn by Doing
 
-## Basic Project Structure
+**Welcome to hands-on learning!** This page shows you real MADE examples with explanations, so you can understand both the syntax and the concepts behind it.
+
+## How to use this page
+
+👀 **Read the examples** — Each example is explained step-by-step  
+✏️ **Try them yourself** — Copy examples into your own `.made` files  
+🔧 **Modify and experiment** — Change values to see what happens  
+🚀 **Run the commands** — Use `npx made-cli generate` to see the results
+
+---
+
+## Example 1: Your First Project (Start Here!)
+
+**What this shows**: Basic project setup with a team
 
 ```made
 project myproject {
@@ -28,7 +41,18 @@ team developers {
 }
 ```
 
-## Process Definition
+**What happens when you run this**:
+- ✅ Creates a project overview document
+- ✅ Lists team members in generated reports
+- ✅ Sets up basic project structure
+
+**Try changing**: Update the project name, add more team members, or change the dates
+
+---
+
+## Example 2: Reusable Workflows
+
+**What this shows**: How to define processes you can reuse across different projects
 
 ```made
 process webdevelopment {
@@ -63,7 +87,19 @@ process webdevelopment {
 }
 ```
 
-## Backlog with Epic and Stories
+**Key concepts explained**:
+- **Process**: A reusable workflow template
+- **Activity**: Major phases in your process (like "Planning" or "Development")
+- **Task**: Specific work items within activities
+- **depends**: Shows that one task must finish before another starts
+
+**Real-world benefit**: Define this process once, then use it for every web project your team does!
+
+---
+
+## Example 3: Organizing Work with Backlogs
+
+**What this shows**: How to break down features into manageable pieces
 
 ```made
 backlog productbacklog {

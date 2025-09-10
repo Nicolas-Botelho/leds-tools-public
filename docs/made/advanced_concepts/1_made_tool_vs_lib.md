@@ -1,80 +1,112 @@
-# Tool vs Library Architecture
+# Understanding MADE's Architecture: Tool vs Library
 
-MADE is split into two main components: the **Tool** and the **Library**. Understanding this separation is crucial for developers who want to extend or integrate MADE.
+**Ready to dig deeper?** This page explains how MADE is built internally — perfect for developers who want to contribute, extend MADE, or integrate it into their own projects.
 
-## MADE Tool (`leds-tools-made`)
+## Why This Matters
 
-### Purpose
-The VS Code extension and CLI interface that provides user interaction and DSL parsing.
+**For Contributors**: Understanding the architecture helps you know where to make changes  
+**For Integrators**: Learn how to use MADE's library in your own applications  
+**For Curious Users**: See how the magic happens behind the scenes
 
-### Key Responsibilities
-- **DSL Parsing**: Interprets `.made` files using Langium grammar
-- **User Interface**: VS Code extension with syntax highlighting and commands
-- **CLI Interface**: Command-line tool for automation
-- **Integration**: Connects user input to the processing library
+**Key insight**: MADE is split into two distinct parts that work together but can also work independently.
 
-### Core Components
+---
+
+## The Big Picture: Two-Part Architecture
+
+Think of MADE like a restaurant:
+- **The Tool** (VS Code extension + CLI) = The friendly waiter who takes your order
+- **The Library** (processing engine) = The skilled chef who prepares your meal
+
+This separation means you can:
+✅ Use the library directly in your own applications  
+✅ Create new user interfaces that connect to the same engine  
+✅ Test and develop each part independently
+
+---
+
+## Part 1: MADE Tool (`leds-tools-made`)
+
+**What it is**: The user-facing parts — VS Code extension and CLI command
+
+### What the Tool Does for You
+🎯 **Understands your `.made` files**: Parses the DSL syntax and checks for errors  
+🎨 **Provides a friendly interface**: Syntax highlighting, autocomplete, right-click menus  
+⚡ **Handles commands**: When you click "Generate Documentation", the tool coordinates everything  
+🔗 **Connects the pieces**: Takes your input and passes it to the processing library
+
+### Tool Architecture (For Developers)
+
 ```
-application/       # Domain applications (Project, Team, TimeBox, etc.)
-language/          # Langium DSL grammar and parser
-static/            # Monaco Editor UI files
-cli/               # Command-line interface
-extension/         # VS Code extension code
-```
-
-### Technologies
-- **Langium**: DSL creation and parsing
-- **VS Code Extension API**: Editor integration
-- **Node.js**: CLI and backend processing
-- **TypeScript**: Type-safe development
-
-## MADE Library (`leds-tools-made-lib`)
-
-### Purpose
-The core processing engine that generates documentation, charts, and handles GitHub integration.
-
-### Key Responsibilities
-- **Data Processing**: Transforms parsed DSL into actionable data structures
-- **Documentation Generation**: Creates markdown reports and documentation
-- **Visualization**: Generates SVG charts and dependency diagrams
-- **GitHub Integration**: Pushes data to GitHub Issues and Projects
-
-### Core Components
-```
-models/            # Data models (Project, Sprint, Issue, etc.)
-markdown/          # Documentation generation services
-chart/             # SVG chart generators (CFD, throughput, dependencies)
-util/              # Common utilities and helpers
-service/           # GitHub API integration
+📁 leds-tools-made/
+├── 📁 application/      ← Domain logic (Project, Team, TimeBox classes)
+├── 📁 language/         ← Langium grammar files (.made syntax rules)
+├── 📁 static/           ← VS Code editor UI components  
+├── 📁 cli/              ← Command-line interface code
+└── 📁 extension/        ← VS Code extension hooks and commands
 ```
 
-### Key Services
-- **MarkdownService**: Orchestrates documentation generation
-- **GitHubService**: Handles GitHub API operations
-- **ChartGenerators**: Creates visual diagrams
-- **DependencyAnalyzer**: Analyzes task relationships
+**Key technologies**:
+- **Langium**: Creates the `.made` language and provides intelligent editing
+- **VS Code Extension API**: Integrates with your editor
+- **Node.js**: Powers the CLI and background processing
 
-## Separation Benefits
+**Developer tip**: If you want to add new DSL syntax or VS Code features, you'll work in this repository.
 
-### 1. **Modularity**
-- Tool focuses on user interaction
-- Library focuses on data processing
-- Clear separation of concerns
+---
 
-### 2. **Reusability**
-- Library can be used independently
-- Multiple frontends can use the same library
-- Different deployment scenarios supported
+## Part 2: MADE Library (`leds-tools-made-lib`)
 
-### 3. **Maintainability**
-- Easier to test individual components
-- Clear API boundaries
-- Independent versioning possible
+**What it is**: The processing engine that does the heavy lifting
 
-### 4. **Extensibility**
-- New frontends can be added easily
-- Library features can be extended independently
-- Plugin architecture support
+### What the Library Does for You
+⚙️ **Processes your data**: Transforms `.made` content into useful structures  
+📋 **Generates documentation**: Creates beautiful Markdown reports with charts  
+📊 **Creates visualizations**: SVG charts, dependency graphs, timelines  
+🔗 **Handles GitHub integration**: Creates issues, projects, and milestones automatically
+
+### Library Architecture (For Developers)
+
+```
+📁 leds-tools-made-lib/
+├── 📁 models/           ← Data structures (Project, Sprint, Issue types)
+├── 📁 markdown/         ← Report generation services
+├── 📁 chart/           ← SVG chart creators (burndown, CFD, dependencies)
+├── 📁 util/            ← Helper functions and utilities
+└── 📁 service/         ← GitHub API integration logic
+```
+
+**Key services explained**:
+- **MarkdownService**: The "report writer" that creates your documentation
+- **GitHubService**: The "GitHub connector" that creates issues and projects  
+- **ChartGenerators**: The "visualization artists" that create graphs and diagrams
+- **DependencyAnalyzer**: The "relationship mapper" that figures out task dependencies
+
+**Developer tip**: If you want to add new output formats or integrations, you'll work in this repository.
+
+---
+
+## Why Split Into Two Parts?
+
+### 🧩 **Modularity** (Easier to Understand)
+- **Tool**: "How do users interact with MADE?"
+- **Library**: "How does MADE process and generate outputs?"
+- Each part has a clear, focused purpose
+
+### 🔄 **Reusability** (Use MADE Your Way)
+- Use the library directly in Node.js applications
+- Create web interfaces, mobile apps, or other frontends
+- Integrate MADE into existing CI/CD pipelines
+
+### 🛠️ **Maintainability** (Easier to Develop)
+- Test user interface separately from processing logic
+- Clear API boundaries prevent tangled code
+- Different teams can work on different parts
+
+### 🚀 **Extensibility** (Future-Proof)
+- Add new user interfaces without changing the core
+- Extend processing capabilities independently
+- Support plugin architectures
 
 ## Integration Flow
 
@@ -104,7 +136,7 @@ await reportManager.githubPush(token, org, repo, project, epics, stories, tasks)
 ### Tool-mediated Usage
 ```bash
 # Via CLI
-made-cli github project.made
+npx made-cli github project.made
 
 # Via VS Code Extension
 # Right-click > Generate GitHub Issues

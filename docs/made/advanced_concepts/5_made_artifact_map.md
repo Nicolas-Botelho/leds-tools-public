@@ -20,7 +20,7 @@ Quick CI guidance:
 
 - Prefer generating artifacts in CI and uploading them as build artifacts rather than committing large generated files to the repo.
 - If you must commit generated artifacts, keep them small and stable to reduce merge conflicts.
-- Add a lightweight job that runs `made generate` (or your project's generator command) and validates that the run completes without errors.
+- Add a lightweight job that runs `npx made-cli generate` (or your project's generator command) and validates that the run completes without errors.
 
 Cross-references:
 

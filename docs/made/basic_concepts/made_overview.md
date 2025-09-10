@@ -52,8 +52,8 @@ Here's what a typical MADE workflow looks like:
 
 ## Ready to get started?
 
-👉 **New to project management?** Start with [Prerequisites](basic_concepts/0_prerequisites.md) to set up your environment  
-👉 **Want to see examples?** Check out [Examples](basic_concepts/3_made_examples.md) to see MADE in action  
-👉 **Prefer hands-on learning?** Jump to [VS Code Usage](basic_concepts/1_made_vscode_usage.md) for an interactive experience
+👉 **New to project management?** Start with [Prerequisites](0_prerequisites.md) to set up your environment  
+👉 **Want to see examples?** Check out [Examples](3_made_examples.md) to see MADE in action  
+👉 **Prefer hands-on learning?** Jump to [VS Code Usage](1_made_vscode_usage.md) for an interactive experience
 
 *Take your time — MADE is designed to be learned gradually!*

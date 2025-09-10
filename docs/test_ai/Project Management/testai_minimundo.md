@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 title: Mini-World
 description: Presents the project`s developing planning.
 ---

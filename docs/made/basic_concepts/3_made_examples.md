@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # MADE Examples — Learn by Doing
 
 **Welcome to hands-on learning!** This page shows you real MADE examples with explanations, so you can understand both the syntax and the concepts behind it.

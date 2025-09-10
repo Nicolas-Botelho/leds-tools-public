@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # How to Use MADE CLI — Step by Step
 
 **New to command-line tools?** Don't worry! This guide explains every step clearly and shows you exactly what to type.

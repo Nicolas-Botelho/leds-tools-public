@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Using MADE in VS Code — Your Interactive Guide
 
 **Love visual tools?** The MADE VS Code extension is perfect for you! It gives you syntax highlighting, error checking, and point-and-click commands to generate documentation and GitHub issues.

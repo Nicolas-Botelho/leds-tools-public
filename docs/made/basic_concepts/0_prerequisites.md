@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Prerequisites — MADE (Complete Setup Guide)
 
 **Welcome!** This guide will get you ready to use MADE, even if you're completely new to project management tools. We'll walk through everything step-by-step.

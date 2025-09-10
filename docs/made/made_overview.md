@@ -6,38 +6,55 @@ title: What is Made
 
 ![MADE Logo](./img/made_logo.png)
 
-MADE (Management as a Code) is an innovative plugin that helps Project Management and development teams efficiently create backlogs and sprints. It emphasizes process reuse and standardization, streamlining task management across projects.
+**Welcome to MADE!** If you're new to project management automation or looking for a simple way to organize your team's work, you're in the right place.
 
-## Key Features
+MADE (Management As Code) is a friendly tool that helps you describe your projects using simple text files, then automatically creates beautiful documentation and GitHub issues from those descriptions. Think of it as "writing a recipe for your project" that a computer can follow to set everything up for you.
 
-- **Process Reuse**: Define processes once, reuse across projects
-- **Standardization**: Consistent project management across teams
-- **GitHub Integration**: Push directly to GitHub Issues and Projects
-- **Documentation Generation**: Auto-generate markdown reports
-- **Agile Support**: Built-in support for Epics, Stories, Tasks, and Sprints
+## What problems does MADE solve?
 
-## Core Components
+**Before MADE:** You spend hours manually creating GitHub issues, updating project boards, writing status reports, and keeping documentation in sync.
 
-MADE uses a Domain-Specific Language (DSL) that consists of:
+**With MADE:** You write one simple `.made` file describing your project, and MADE automatically generates:
+- 📋 Organized documentation (with charts and timelines)
+- 🎯 GitHub issues and project boards
+- 📊 Progress reports and metrics
+- 🗺️ Project roadmaps
 
-- **Project**: Configuration and metadata
-- **Team**: Team members and organization
-- **Backlog**: Epics, Stories, and Tasks
-- **TimeBox**: Sprints and iterations
-- **Process**: Reusable workflows
-- **Roadmap**: Milestones and releases
+## What you'll create with MADE
 
-## How It Works
+MADE helps you work with familiar project concepts, but in a structured way:
 
-1. Write your project structure in `.made` files using the DSL
-2. Use VS Code extension or CLI to process the files
-3. Generate documentation or push to GitHub automatically
-4. Maintain consistency across projects with reusable processes
+- **Project**: Basic info about your work (name, timeline, goals)
+- **Team**: Who's working on what
+- **Backlog**: Your to-do list organized as Epics → Stories → Tasks
+- **Sprints**: Time-boxed work periods with specific goals
+- **Roadmap**: High-level milestones and releases
 
-## Benefits
+*Don't worry if some terms are new — we'll explain everything step by step!*
 
-- **Consistency**: Standardized approach to project management
-- **Efficiency**: Reduce repetitive setup work
-- **Integration**: Seamless GitHub workflow integration
-- **Documentation**: Auto-generated, always up-to-date documentation
-- **Collaboration**: Clear team structure and responsibility definition
+## Your first 5 minutes with MADE
+
+Here's what a typical MADE workflow looks like:
+
+1. **Write** a simple `.made` file describing your project (like filling out a form)
+2. **Run** one command to process the file
+3. **Get** automatic documentation and optionally sync with GitHub
+4. **Update** your `.made` file as the project evolves
+
+**Example**: Instead of manually creating 20 GitHub issues, you describe them once in your `.made` file, and MADE creates them all at once — with proper labels, assignments, and organization.
+
+## Why teams love MADE
+
+✅ **Saves time**: Automate repetitive project setup tasks  
+✅ **Stays in sync**: One file keeps everything updated  
+✅ **Team-friendly**: Easy to review changes like code  
+✅ **Flexible**: Works for small teams or large projects  
+✅ **Familiar**: Uses tools you already know (VS Code, GitHub, Markdown)
+
+## Ready to get started?
+
+👉 **New to project management?** Start with [Prerequisites](basic_concepts/0_prerequisites.md) to set up your environment  
+👉 **Want to see examples?** Check out [Examples](basic_concepts/3_made_examples.md) to see MADE in action  
+👉 **Prefer hands-on learning?** Jump to [VS Code Usage](basic_concepts/1_made_vscode_usage.md) for an interactive experience
+
+*Take your time — MADE is designed to be learned gradually!*

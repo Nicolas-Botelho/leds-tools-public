@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Project Management
 description: Presents the project`s developing planning.
 ---

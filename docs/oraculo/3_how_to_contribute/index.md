@@ -1,9 +1,15 @@
 ---
-sidebar_position: 5
-title: Suggestions for Improvements 
+sidebar_position: 1
+title: How to Contribute
 ---
 
-# Suggestions for Improvements
+# How to Contribute
+
+There are several ways to contribute to the project, such as proposing **new features**, collaborating on installation and environment setup, and suggesting **improvements** for continuous evolution.  
+
+Below are some improvement suggestions that could be implemented:
+
+---
 
 ### Suggestion 1: Conversation Memory in AI
 
@@ -11,7 +17,7 @@ title: Suggestions for Improvements
 Add **contextual memory** to the chatbot, allowing it to keep track of previous user interactions. This way, sequential questions can be understood within the same context, without requiring repetition.
 
 #### Why implement?
-Currently, each question to Oráculo is processed in isolation, forcing users to repeat context for each query.  
+Currently, each question to Oráculo is processed in isolation, forcing users to repeat context for every query.  
 With memory, it would be possible to maintain a **continuous dialogue**, improving usability and making interactions more natural.
 
 #### Benefits
@@ -51,3 +57,4 @@ With dynamic token management, users could update credentials in real time, ensu
 #### Benefits
 - Fast replacement of expired credentials.  
 - Reduces technical dependency by avoiding manual file editing.  
+- Increases efficiency by eliminating the need to restart the application.  

@@ -1,6 +1,10 @@
-# What is MADE? (A Beginner's Introduction)
+---
+sidebar_position: 1
+title: What is Made
+---
+# What is MADE
 
-![MADE Logo](../img/made_logo.png)
+![MADE Logo](./img/made_logo.png)
 
 **Welcome to MADE!** If you're new to project management automation or looking for a simple way to organize your team's work, you're in the right place.
 

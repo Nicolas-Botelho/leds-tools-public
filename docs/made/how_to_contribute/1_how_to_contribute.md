@@ -169,6 +169,32 @@ class ImprovedGitHubMapper {
 
 **Impact**: More native GitHub experience, better project management integration.
 
+### 5. Add Option to Create Using JIRA
+**Problem**: MADE currently only integrates with GitHub, limiting adoption for teams using JIRA.
+
+**Solution Needed**:
+- Adapt MADE to also be integrated with JIRA
+- Support JIRA custom fields and workflows
+- Enable linking and dependency management using JIRA's native features
+
+**Implementation Approach**:
+
+```typescript
+src/
+├── extract/github/
+│   ├── Adapters/
+│   │   ├── IssueAdapter.ts
+│   │   └── ...
+│   ├── issue.extract.ts
+│   └── ...
+└── push/github/
+    ├── jiraApi.ts
+    ├── issue.push.ts
+    └── ...
+```
+
+**Impact**: Broader adoption for teams using JIRA, improved project management integration, and more flexible workflow options.
+
 ## Additional Contribution Opportunities
 
 ### Documentation Improvements

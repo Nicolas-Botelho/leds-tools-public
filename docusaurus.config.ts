@@ -125,6 +125,12 @@ const config: Config = {
           label: 'Oraculo',
         },
 
+        {
+          type: 'docSidebar',
+          sidebarId: 'reportfy',
+          position: 'left',
+          label: 'Reportfy',
+        },
 
         {
           type: 'docSidebar',

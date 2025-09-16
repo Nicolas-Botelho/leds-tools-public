@@ -49,7 +49,7 @@ After the **Open Web UI** container finishes setting up:
 2. Create your local account. Dont worry, your email wont be verified
 3. After logged in, go to [http://localhost:3000/admin/functions](http://localhost:3000/admin/functions)
 4. In the **Functions** page, click on **import functions**
-5. Select the file [**pipeline_api.json**](`src/assets/open_web_ui/pipeline_api.json`) in the `src/assets/open_web_ui/` folder
+5. Select the file **pipeline_api.json** in the `src/assets/open_web_ui/` folder
 6. Activate the function through a slider on the top-right corner
 7. Return to the initial page with [http://localhost:3000](localhost:3000)
 

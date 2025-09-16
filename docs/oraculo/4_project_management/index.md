@@ -21,6 +21,39 @@ Presents the project's overall development planning and structure, including bac
 | 5  | Developers   | LLM Answers Generating Graphical Data         | Deliver graphic information through the LLM chat.                                                | 80         | Improve LLM answers                                   |
 
 ---
+---
+
+## 📊 Project Metrics
+
+These are the management metrics chosen for the Oráculo project. Each metric indicates how it will be measured using **GitHub data integrated into Oráculo**, and its expected impact on improving project outcomes.
+
+### 1. Committed vs. Completed
+- **Measurement**: Count the number of issues (or story points) marked as **planned for the sprint** (Committed) versus the number of issues **closed in GitHub** within that sprint (Completed). Oráculo will calculate the percentage with the formula:  
+  `(Completed Work Items * 100) / (Committed Work Items)`  
+- **Impact**: Provides visibility into the team’s ability to meet commitments and improves estimation accuracy. Discrepancies highlight unrealistic planning or blockers, allowing managers to act early and keep delivery predictable.
+
+---
+
+### 2. Team Velocity
+- **Measurement**: Based on the **sum of completed story points in GitHub issues** per sprint. Oráculo will present historical velocity per sprint and calculate a rolling average across the last 3–4 sprints.  
+- **Impact**: Enables forecasting of future deliveries and workload capacity. Consistent velocity indicates maturity; sudden changes point to problems like absences, scope changes, or technical obstacles, helping managers anticipate risks.
+
+---
+
+### 3. Automated Test Coverage
+- **Measurement**: Integration with CI/CD pipelines (e.g., GitHub Actions) will provide reports on **percentage of code covered by automated tests**. Coverage = `(Lines of Code Tested / Total Lines of Code) * 100`. Data will be automatically collected after each pipeline execution.  
+- **Impact**: Ensures quality and reduces regression risks. High coverage means safer deployments, faster detection of anomalies, and more robust improvements in Oráculo without breaking existing features.
+
+---
+
+### 4. Cycle Time / Lead Time
+- **Measurement**:  
+  - **Cycle Time**: Calculated from the time an issue is moved to “In Progress” until it is **closed in GitHub**.  
+  - **Lead Time**: Calculated from the time an issue is created until it is **closed**.  
+  Data will be extracted directly from GitHub issue and pull request timestamps.  
+- **Impact**: Shorter times reflect greater agility and efficiency in delivery. Tracking delays highlights bottlenecks (e.g., review queues, unclear requirements) and supports process optimization for faster, more consistent releases.
+
+---
 
 ## 🧩 Project Model Canvas
 

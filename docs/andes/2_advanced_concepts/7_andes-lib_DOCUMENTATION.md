@@ -19,5 +19,19 @@ export default interface IRender {
 }
 ```
 
-## TODO
-documentar cada um dos renders
+## `Identation` Interface
+
+```ts
+export function identate(times: number = 0): string
+{
+    return '\t'.repeat(times);
+}
+```
+
+This interface is responsible for adding \t on any section or subsection you are trying to render. 
+
+## There are other renderes
+
+If you take a look, you'll see that there are many other renditions available to create a new function for the library. They're designed to work with Markdown features like Pages, Sections, Paragraphs, and even Platuml and Mermaid. 
+
+Don't worry, they have similar structures to the renditions you've seen so far.

@@ -126,7 +126,7 @@ Advisors, scholarship holders, staff, and other stakeholders involved in LEDS an
 #### 🛠️ Developers:
 - Alicia Caporalli (Steadiness);
 - Sofia Nascimento;
-- Vivian Lacerda.
+- Vitor Nascimento.
 
 ---
 

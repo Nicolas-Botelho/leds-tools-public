@@ -115,4 +115,4 @@ OpenWeb UI can be accessed:
 
 - **OpenWebUI**: [http://localhost:3000](http://localhost:3000)
 
-[Click here](./../../oraculo/2_basic_concepts/index.md/#how-to-use) to view the step-by-step setup.
+[Click here](../1_basic_concepts/3_how_to_use.md) to view the step-by-step setup.

@@ -5,22 +5,15 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'LEDS ToolKit',
   favicon: 'img/favicon.ico',
-  url: 'https://Nicolas-Botelho.github.io',
-  baseUrl: '/leds-tools-public/',
+
+  // original repository and url
+  url: `https://leds-org.github.io`,
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Nicolas-Botelho', // Usually your GitHub org/user name.
-  projectName: 'leds-tools-public', // Usually your repo name.
-
-  // original repository and url
-  // url: `https://leds-org.github.io`,
-  // baseUrl: '/',
-
-  // // GitHub pages deployment config.
-  // // If you aren't using GitHub pages, you don't need these.
-  // organizationName: 'leds-org', // Usually your GitHub org/user name.
-  // projectName: 'leds-tools', // Usually your repo name.
+  organizationName: 'leds-org', // Usually your GitHub org/user name.
+  projectName: 'leds-tools', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -132,6 +125,12 @@ const config: Config = {
           label: 'Oraculo',
         },
 
+        {
+          type: 'docSidebar',
+          sidebarId: 'reportfy',
+          position: 'left',
+          label: 'Reportfy',
+        },
 
         {
           type: 'docSidebar',

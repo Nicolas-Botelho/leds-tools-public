@@ -1,62 +1,51 @@
 ---
 sidebar_position: 1
-title: Project Management
-description: Presents the project`s developing planning.
+title: Project's Developing Plan
 ---
 
-Presents the project`s developing planning.
+# Project's Developing Plan
 
-## Backlog
+## Important Dates
+|    Date    | Description | Related Features |
+|------------|-------------|------------------|
+| 22/09/2025 | Start of the works with the team | not a delivery date |
+| 28/09/2025 | First Delivery | 1 |
+| 02/11/2025 | Second Delivery (First Big Delivery) | 2.1, 2.2 and 2.3 |
+| 30/11/2025 | Third Delivery (Second Big Delivery) | 3 |
 
-| ID | Feature | Description | Importance | Proposal |
-|----|---------|-------------|------------|----------|
-| 1 | Create authorization service rules based on Actor and User Case's Events | Create authorization rules on Back-End and Front-End based on relations among actors and User Case's Events | 100 | Improve software development process by 10% |
-| 2 | Create authorization data rules based on Actor and User Case's Events | Create authorization data rules on Back-End and Front-End based on relations among actors and User Case's Events (Owner Patterns) | 95 | Improve software development process by 10% |
-| 3 | Implement Minimal API with M(domain, service)VC pattern | Apply M(domain, service)VC pattern using Minimal API approach in C#, Java, and Django projects | 90 | Standardize architecture to reduce rework |
-| 4 | Fix document insertion error in Django | Identify and fix the issue preventing document insertion in Django | 85 | Ensure system integrity and functionality |
-| 5 | Add missing library in Java project | Identify and integrate the required library to ensure proper execution of the Java project | 80 | Eliminate technical blockers for the team |
-| 6 | Fix general errors in Django | Resolve various backend issues in the Django project | 88 | Reduce bugs and improve system stability |
-| 7 | Generate classes based on use case type | Automate the creation (or not) of classes based on the use case type (e.g., CRUD or non-CRUD) | 82 | Boost productivity in software modeling |
-| 8 | Generate code with AI based on use case comments | Use AI to analyze comments and automatically generate supporting code | 93 | Accelerate development with intelligent assistance |
+## Backlog - Frontend
 
-## General planning
+|  ID | Feature | Description | Importance | Proposal |
+|-----|---------|-------------|------------|----------|
+|  1  | Implements the Github Actions Module | Implementation of the generation of the GitHub Actions for the generated code | 85 | Understand how compilers works and a bit about spark-lib architecture |
+| 2.1 | Generate a example case | Generate a example case and document the frontend architecture | 80 | Better comprehension of the frontend architecture |
+| 2.2 | Corrections in the frontend generated code | Corrections in the new frontend generation so it runs properly without the necessity of user made corrections | 100 | Generated frontend works properly from the start |
+| 2.3 | Documentation of the frontend generated code | Addition of the generation of the documentation for the frontend generated code | 90 | Documented frontend code generation |
+|  3  | Creation of the Module Doc Lib | Creation of a modular lib to centralize reusable components of the Spark-Lib and Andes-Lib | 95 | Reuseble modular lib for Spark and Andes |
 
-**Stopped development on creating OPA based on actor and use case events, without a link to C#.**
+## Frontend Development Plan (2025)
 
-* Release 1.0 (14/10/2024 - 01/11/2024): Create authorization service rules based on Actor and User Case's Events on C# application and Create authorization data rules based on Actor and User Case`s Events  (Owner Patterns) on C#
+|  ID | Description | Expected Time to Conclude (in weeks) | Related Feature |
+|-----|-------------|--------------------------------------|-----------------|
+|  1  | Implements the Github Actions Module | 1 | 1 |
+|  2  | Study of the generated frontend code, Corrections in the generated frontend code, Documentation of the generated frontend code | 4 | 2 |
+|  3  | Creation of the Module Doc Lib | 4 | 3 |
 
-## Release 1.0 - 01/11/2024
-
-* **Goal**: Create authorization service and data based on User Case Diagram 
-
-  * **Features**: ID 1 and ID 2
-
-  * **Deadline I**  - 25/10/2024 
-      * ID 1: Create authorization service rules based on Actor and User Case's Events on C# application  
-  * **Deadline II** - 01/11/2024 
-      * ID 2: Create authorization data rules based on Actor and User Case`s Events  (Owner Patterns) on C#
+## Timeline
 
 ```mermaid
-%%{
-  init: {
-    'logLevel': 'debug',
-    'theme': 'forest',
-    'themeCSS': '.taskText, .taskTextOutsideRight, .taskTextOutsideLeft { font-size: 20px; }'
-  }
-}%%
+%%{init: {'theme': 'forest' } }%%
 timeline
-   
-    Service Authorization  <br> 18/10/2024            : Define User case Language
-                                                      : Implement User Case Language
-                                                      : Mapping Use Case Language on OPA Language
-                                                      : Validade transformation with Developer
-                                                      : Publish Spark
+    title Frontend Delivery Timeline
 
+    Delivery 1 - September/2025
+      : Feature 1 - Implements the Github Actions Module
 
-    Data Authorization <br> 01/11/2024              : Improve Use Case Language to data authorization
-                                                    : Implement User Case Language
-                                                    : Mapping Use Case Language on OPA Language
-                                                    : Validade transformation with Developer
-                                                    : Publish Spark
+    Delivery 2 October/2025
+      : Feature 2.1 - Study of the generated frontend code
+      : Feature 2.2 - Corrections in the frontend generated code
+      : Feature 2.3 - Documentation of the generated frontend code
+
+    Delivery 3 November/2025
+      : Feature 3 - Creation of the Module Doc Lib
 ```
-

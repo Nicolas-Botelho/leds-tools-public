@@ -1,6 +1,6 @@
 ---
 title: Frontend Management Metrics
-sidebar-position: 2
+sidebar-position: 3
 ---
 
 # GQM (Goal, Question, Metric)

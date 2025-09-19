@@ -76,10 +76,10 @@ jobs:
 ```
 
 The purpose of this file is to configure an action to run when a `push` on the `main` branch occurs.  
-This action installs the dependencies ([andes-lib](../andes//1_basic_concepts/1_AndesOverview.md), [spark-lib](../spark/basic_concepts/0_anchor.md), and [made-lib](../made/basic_concepts/made_overview.md)) temporarily on a GitHub Ubuntu runner, executes the provided `.andes` file, and from the generated `.spark` and `.made` files, runs [spark-lib](../spark/basic_concepts/0_anchor.md) and [made-lib](../made/basic_concepts/made_overview.md) respectively.  
+This action installs the dependencies ([andes-lib](../andes/1_basic_concepts/1_AndesOverview.md), [spark-lib](../spark/basic_concepts/0_anchor.md), and [made-lib](../made/basic_concepts/made_overview.md)) temporarily on a GitHub Ubuntu runner, executes the provided `.andes` file, and from the generated `.spark` and `.made` files, runs [spark-lib](../spark/basic_concepts/0_anchor.md) and [made-lib](../made/basic_concepts/made_overview.md) respectively.  
 As a result, you end up with a repository containing the artifacts (frontend + backend + documentation) and `tasks` in the project repository.
 
-Additionally, there are also files in the repository to install Python dependencies to use [code-wise](../code_wise/code_wise_lib/Overview%20CW-PR.md).  
+Additionally, there are also files in the repository to install Python dependencies to use [code-wise](../code_wise/code_wise_lib/1_Basic_Concepts/overview.md).  
 
 As for the [oracle](../oraculo/1_basic_concepts/1_overview.md), its usage link is not permanent, so it was not included here.
 

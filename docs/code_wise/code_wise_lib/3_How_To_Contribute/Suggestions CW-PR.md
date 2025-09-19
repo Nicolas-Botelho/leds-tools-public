@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Improvement Suggestions
+title: Suggestions Summary
 ---
 
 ### Suggestion 1: Support for Local AI Models via Ollama

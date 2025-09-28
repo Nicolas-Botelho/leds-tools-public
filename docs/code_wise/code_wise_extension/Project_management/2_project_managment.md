@@ -98,13 +98,15 @@ timeline
   }
 }%%
 timeline
-
-  Implement Agent Features and UI <br> Sep 28, 2025   : Add Agents
-                                             : Add command to basic analysis
-                                             : Add command to average analysis
-                                             : Add command to heavy analysis
-                                             : Add command to personalized analysis
-                                             : Build VS Code Configuration UI
+    title Implement Agent Features and UI
+    
+    section Sep 28, 2025
+        Add Agents
+        Add command to basic analysis
+        Add command to average analysis
+        Add command to heavy analysis
+        Add command to personalized analysis
+        Build VS Code Configuration UI
 
 ```
 

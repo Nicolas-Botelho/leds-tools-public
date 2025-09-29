@@ -26,8 +26,9 @@ Deliver an improved MADE extension and library in 4 months, consuming at most 10
 ## Requirements (main)
 - Avoid GitHub issue duplication.
 - Allow creation and use of new templates for issues and reports.
-- Map MADE components to appropriate GitHub structures (issues, milestones, projects).
-- Refactor code to follow event-driven paradigm.
+- Map MADE components to appropriate GitHub and Jira structures (issues, milestones, projects).
+- Apply programming paradigm and implement comprehensive testing.
+- Configure and integrate Jira API functionality.
 - Document improvements and describe system functionalities.
 
 ## External Stakeholders
@@ -72,31 +73,20 @@ Deliver an improved MADE extension and library in 4 months, consuming at most 10
 - Acceptance criteria: Docusaurus site published on `gh-pages` branch or as stable build; essential pages (overview, prerequisites, examples) ready.
 - Deadline: 08/29/2025
 
-2nd delivery — Map MADE components to GitHub (4 sprints)
-- Objective: Define and implement mapping between MADE components and GitHub artifacts (issues, milestones, projects)
-- Acceptance criteria: mapping documented; proof of concept that correctly creates issues/milestones in test repository.
-- Final deadline: 09/26/2025
+## Delivery Schedule Overview
 
-3rd delivery — Avoid issue duplication and GitHub Templates (4 sprints)
-- Objective: Implement duplicate detection/avoidance and support for configurable issue templates
-- Acceptance criteria: integration execution without generating duplicates in multiple executions; templates applicable via `.made-templates/` or config.
-- Final deadline: 10/28/2025
+For detailed sprint backlog, project management metrics, and comprehensive timeline information, please refer to the [Detailed Backlog and Metrics](./3_detailed_backlog_and_metrics.md) document.
 
-4th delivery — Event-driven paradigm (4 sprints)
-- Objective: Refactor architecture to an event-based model, enabling plugins and greater extensibility
-- Acceptance criteria: documented architecture; important modules using EventBus and testable handlers; contribution documentation for plugins.
-- Final deadline: 11/28/2025
+**Quick Overview of Remaining Deliveries:**
+- **Target Delivery: 24/09/2025 (Wed) | Final Deadline: 28/09/2025 (Sun)** — 2nd Delivery: Github Template Implementation
+- **Target Delivery: 29/10/2025 (Wed) | Final Deadline: 02/11/2025 (Sun)** — 3rd Delivery: MADE→GitHub/Jira Mapping + Issue duplication fix
+- **Target Delivery: 26/11/2025 (Wed) | Final Deadline: 30/11/2025 (Sun)** — 4th Delivery: Programming paradigm + Testing
 
-## Backlog (prioritized)
-
-| ID | Feature | Description | Importance | Proposal / Expected Result |
-| -- | ------- | ----------- | ---------- | -------------------------- |
-| 1  | Avoid issue duplication | Compare existing issues and avoid creating duplicates | 100 | Reduce repository noise and avoid duplicate work |
-| 2  | Issue Templates | Support for `.made-templates/` and variables in templates | 95 | Reusable templates per project, better formatting |
-| 3  | MADE→GitHub Mapping | Map Project/Sprint/Team → Projects/Milestones/Assignees | 90 | More natural integration with GitHub workflow |
-| 4  | Event-driven refactor | Introduce EventBus and handlers for modular processing | 90 | Better extensibility and unit tests |
-| 5  | MVC & modular refactor | Separate core (lib) from IO and UI layer | 80 | Facilitate NPM package publication and reuse |
-| 6  | Documentation and examples | Improve docs, examples and contribution guides | 75 | Reduce entry barrier and accelerate testing by contributors |
+### Delivery Schedule Policy
+Our project follows a structured delivery schedule with built-in buffer time:
+- **Target Delivery Dates**: Sprints are planned to complete on Wednesdays
+- **Final Delivery Deadline**: The actual project deadline is on Sunday (4 days after target delivery)
+- **Buffer Period**: The Wednesday-to-Sunday gap provides time for final testing, bug fixes, and quality assurance without requiring weekend work
 
 ## Risks
 - Tools (CI, Docker, GitHub APIs) presenting problems or unavailability.
@@ -109,14 +99,10 @@ Suggested mitigations:
 - Weekly communications and availability confirmation before each sprint.
 - Have a test repository to validate GitHub integrations without impacting production.
 
-## Success Metrics
-- Deliveries completed on milestone dates with acceptance criteria met.
-- Measurable reduction of issue duplication in tests (goal: < 1% duplicates generated).
-- Minimum unit test coverage in refactored modules (goal: 60%+ in critical areas).
-- Total development time within the estimated 100-hour limit (monitor via simple timesheets).
-
 ## Summary Timeline
 - 08/29/2025 — 1st Delivery (Docusaurus)
-- 09/26/2025 — 2nd Delivery (MADE→GitHub Mapping)
-- 10/28/2025 — 3rd Delivery (Avoid duplication + Templates)
-- 11/28/2025 — 4th Delivery (Event-driven)
+- 24/09/2025 (Wed) / 28/09/2025 (Sun) — 2nd Delivery: Github Template Implementation
+- 29/10/2025 (Wed) / 02/11/2025 (Sun) — 3rd Delivery: MADE→GitHub/Jira Mapping + Issue duplication fix
+- 26/11/2025 (Wed) / 30/11/2025 (Sun) — 4th Delivery: Programming paradigm + Testing
+
+*Note: Dates shown as Target Delivery (Wed) / Final Deadline (Sun)*

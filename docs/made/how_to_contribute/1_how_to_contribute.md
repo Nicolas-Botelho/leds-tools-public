@@ -181,16 +181,27 @@ class ImprovedGitHubMapper {
 
 ```typescript
 src/
-├── extract/github/
-│   ├── Adapters/
-│   │   ├── IssueAdapter.ts
+├── extract/
+│   ├── github/
+│   │   ├── issue.extract.ts
 │   │   └── ...
-│   ├── issue.extract.ts
-│   └── ...
-└── push/github/
-    ├── jiraApi.ts
-    ├── issue.push.ts
-    └── ...
+│   └── jira/
+│       ├── Adapters/
+│       │   ├── JiraIssueAdapter.ts
+│       │   ├── JiraProjectAdapter.ts
+│       │   └── ...
+│       ├── jira.extract.ts
+│       └── ...
+└── push/
+    ├── github/
+    │   ├── githubApi.ts
+    │   ├── issue.push.ts
+    │   └── ...
+    └── jira/
+        ├── jiraApi.ts
+        ├── jiraIssue.push.ts
+        ├── jiraProject.push.ts
+        └── ...
 ```
 
 **Impact**: Broader adoption for teams using JIRA, improved project management integration, and more flexible workflow options.

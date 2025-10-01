@@ -8,8 +8,8 @@ The article proposes using learning curve theory to measure and monetize the lea
 
 ## The Log-Linear Learning Curve
 Equation 1:
-```math
-y = ax^{-b}
+```
+y = ax^(-b)
 ```
 
 y = Accumulated average cost (in work hours) per unit produced.  
@@ -25,7 +25,7 @@ We can use this as a basis to predict project costs. "y" could represent the ave
 ## Modeling Productivity Improvement
 ### Rate of Improvement in Resolution Time
 Equation 2:
-```math
+```
 P(p) = -dT/dp
 ```
 
@@ -37,7 +37,7 @@ It measures the speed at which the team is improving. If "P(p)" is high, the tea
 
 ### Rate of Knowledge Creation
 Equation 3:
-```math
+```
 Q(p) = -du/dp
 ```
 
@@ -49,7 +49,7 @@ Here we formalize the idea of problem-solving as knowledge acquisition. The arti
 
 ### Link Between Knowledge and Productivity
 Equation 4:
-```math
+```
 P(p) = cQ(p)
 ```
 
@@ -63,7 +63,7 @@ The interaction between productivity improvement (P(p)) and remaining resolution
 - Prey = T(p) (the time left to be reduced). It is the “food” for improvement.  
 - Predator = P(p) (the improvement rate). It “consumes” the time to be reduced in order to grow.  
 
-```math
+```
 dQ/dp = (a-bP)Q
 ```
 
@@ -72,12 +72,12 @@ b = Coefficient measuring the negative effect of improvement (P) on knowledge gr
 
 The knowledge creation rate (dQ/dp) grows but is limited by the improvement already achieved. The faster improvement happens (P), the harder it becomes to generate new knowledge (diminishing marginal gains).
 
-```math
+```
 dT/dp = (-d+CQ)
 ```
 
 Which simplifies to:
-```math
+```
 dT/dp = -P(p)T(p)
 ```
 
@@ -88,8 +88,8 @@ The time to be reduced (T) decreases, and this reduction is accelerated by the a
 
 ## Conclusion: Final Connection with the Learning Curve
 Equation 6:
-```math
-P(p) = KT(p)^{k}
+```
+P(p) = KT(p)^(k)
 ```
 
 This equation expresses the relationship between the rate of improvement P(p) and the potential for improvement T(p), where k is a parameter reflecting learning efficiency. By solving the system of differential equations, the article demonstrates that the solution leads back to the log-linear learning curve form (y = ax⁻ᵇ).  
